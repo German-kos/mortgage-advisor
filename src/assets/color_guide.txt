@@ -1,0 +1,15 @@
+primary (primary bg)
+orange-100 / #F4BDAF
+
+primary (secondary bg)
+white
+
+dark green
+emerald-800 / #18553A
+
+tertiary (subtext)
+stone-500 / #89807A
+
+buttons
+red-400 / #E34131
+

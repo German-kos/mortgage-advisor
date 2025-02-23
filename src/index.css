@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* RTL */
+html {
+  direction: rtl;
+  text-align: right;
+}
+
+html,
+body,
+#root {
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+}
