@@ -64,7 +64,7 @@ const Hero: React.FC<HeroProps> = () => {
           <div className={heroImageContainer}>
             <img
               className={heroImage}
-              src="/public/images/business_stock.jpg"
+              src="/images/business_stock.jpg"
               alt="Eliran"
             />
           </div>
