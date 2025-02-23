@@ -35,8 +35,8 @@ const FormSection: React.FC = () => {
         {/* Right side */}
         <div className={formImageContainer}>
           <img
-            src="/src/assets/images/business_stock.jpg"
-            alt="Financial Consultation"
+            src="/assets/images/business_stock.jpg"
+            alt="Eliran"
             className={formImage}
           />
         </div>
