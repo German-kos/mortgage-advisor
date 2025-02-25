@@ -6,9 +6,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-type FooterProps = {};
-
-const Footer: React.FC<FooterProps> = () => {
+export const Footer = () => {
   return (
     <footer className="w-full py-6 bg-orange-100">
       <div className="flex flex-col items-center justify-between max-w-6xl px-6 mx-auto md:flex-row sm:px-12 md:px-20">
@@ -57,5 +55,3 @@ const Footer: React.FC<FooterProps> = () => {
     </footer>
   );
 };
-
-export default Footer;

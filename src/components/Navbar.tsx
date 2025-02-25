@@ -1,6 +1,6 @@
 import { FaWhatsapp } from "react-icons/fa";
 
-export const Navbar: React.FC = () => {
+export const Navbar = () => {
   return (
     <div className="w-full bg-orange-100">
       {/* Wrapper to match Hero section width and padding */}
