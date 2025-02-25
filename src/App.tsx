@@ -1,16 +1,16 @@
-import Footer from "./components/Footer";
-import FormSection from "./components/FormSection";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Reasons from "./components/Reasons";
+import { Footer } from "./components/Footer";
+import { FormSection } from "./components/FormSection";
+import { HeroSection } from "./components/HeroSection";
+import { Navbar } from "./components/Navbar";
+import { ReasonsSection } from "./components/ReasonsSection";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Hero />
+      <HeroSection />
       <FormSection />
-      <Reasons />
+      <ReasonsSection />
       <Footer />
     </>
   );

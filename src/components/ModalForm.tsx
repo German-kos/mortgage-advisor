@@ -1,26 +1,11 @@
 import { useState } from "react";
 import { handleFormSubmit } from "../utils/formHandler";
-import {
-  closeButton,
-  modalForm,
-  modalFormContainer,
-  modalFormTitle,
-  xButton,
-} from "../styles/modalStyles";
-import {
-  inputContainer,
-  inputField,
-  submitButton,
-  successContainer,
-  successText,
-  successTitle,
-} from "../styles/formStyles";
 
 type ModalFormProps = {
   onClose: () => void;
 };
 
-const ModalForm: React.FC<ModalFormProps> = ({ onClose }) => {
+export const ModalForm: React.FC<ModalFormProps> = ({ onClose }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -29,31 +14,43 @@ const ModalForm: React.FC<ModalFormProps> = ({ onClose }) => {
   };
 
   return (
-    <div className={modalFormContainer}>
+    <div className="relative flex flex-col items-center justify-center w-full max-w-md p-6">
       {isSubmitted ? (
         // Success Message
-        <div className={successContainer}>
-          <h2 className={successTitle}>הפרטים נשלחו בהצלחה</h2>
-          <p className={successText}>נחזור אליך בהקדם האפשרי.</p>
-          <button className={closeButton} onClick={onClose}>
+        <div className="flex flex-col items-center justify-center h-full">
+          <h2 className="text-2xl font-bold text-center text-emerald-900">
+            הפרטים נשלחו בהצלחה
+          </h2>
+          <p className="mt-2 text-lg text-center text-gray-700">
+            נחזור אליך בהקדם האפשרי.
+          </p>
+          <button
+            className="px-6 py-3 mt-6 font-semibold text-white transition bg-red-400 border-2 border-red-400 rounded-lg hover:bg-orange-600 hover:border-orange-600 hover:text-white"
+            onClick={onClose}
+          >
             סגור
           </button>
         </div>
       ) : (
         <>
-          <button className={xButton} onClick={onClose}>
+          <button
+            className="absolute top-0 right-0 text-2xl text-gray-500 hover:text-gray-700"
+            onClick={onClose}
+          >
             ✕
           </button>
-          <h2 className={modalFormTitle}>השאירו פרטים ונחזור אליכם בהקדם</h2>
+          <h2 className="mb-6 text-4xl font-bold text-center text-emerald-900">
+            השאירו פרטים ונחזור אליכם בהקדם
+          </h2>
 
-          <form onSubmit={handleSubmit} className={modalForm}>
-            <div className={inputContainer}>
+          <form onSubmit={handleSubmit} className="flex flex-col w-full">
+            <div className="mb-4">
               {/* Name */}
               <input
+                className="w-full p-3 text-black bg-white border rounded-md border-stone-400 placeholder-stone-400"
                 id="name"
                 type="text"
                 name="name"
-                className={inputField}
                 placeholder="שם מלא"
                 required
                 autoComplete="name"
@@ -61,12 +58,12 @@ const ModalForm: React.FC<ModalFormProps> = ({ onClose }) => {
             </div>
 
             {/* Email */}
-            <div className={inputContainer}>
+            <div className="mb-4">
               <input
+                className="w-full p-3 text-black bg-white border rounded-md border-stone-400 placeholder-stone-400"
                 id="email"
                 type="email"
                 name="email"
-                className={inputField}
                 placeholder="אימייל"
                 required
                 autoComplete="email"
@@ -74,19 +71,22 @@ const ModalForm: React.FC<ModalFormProps> = ({ onClose }) => {
             </div>
 
             {/* Phone */}
-            <div className={inputContainer}>
+            <div className="mb-4">
               <input
+                className="w-full p-3 text-black bg-white border rounded-md border-stone-400 placeholder-stone-400"
                 id="phone"
                 type="text"
                 name="phone"
-                className={inputField}
                 placeholder="טלפון"
                 required
                 autoComplete="tel"
               />
             </div>
 
-            <button type="submit" className={submitButton}>
+            <button
+              type="submit"
+              className="px-6 py-3 mt-6 font-semibold text-white transition bg-red-400 border-2 border-red-400 rounded-lg hover:bg-orange-600 hover:border-orange-600 hover:text-white"
+            >
               חזרו אליי!
             </button>
           </form>
@@ -95,5 +95,3 @@ const ModalForm: React.FC<ModalFormProps> = ({ onClose }) => {
     </div>
   );
 };
-
-export default ModalForm;

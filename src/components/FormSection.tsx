@@ -1,22 +1,7 @@
 import { useState } from "react";
-import {
-  formWrapper,
-  formTitleContainer,
-  formTitle,
-  formContentContainer,
-  formContainer,
-  formImageContainer,
-  formImage,
-  inputContainer,
-  inputField,
-  submitButton,
-  successContainer,
-  successTitle,
-  successText,
-} from "../styles/formStyles";
 import { handleFormSubmit } from "../utils/formHandler";
 
-const FormSection: React.FC = () => {
+export const FormSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -25,38 +10,44 @@ const FormSection: React.FC = () => {
   };
 
   return (
-    <section className={formWrapper}>
+    <section className="flex flex-col items-center justify-center w-full h-screen px-6 bg-transparent sm:px-12 md:px-20 text-emerald-800">
       {/* Title */}
-      <div className={formTitleContainer}>
-        <h2 className={formTitle}>השאר פרטים ונחזור אליך בהקדם</h2>
+      <div className="mb-8 text-center text-elerald-800">
+        <h2 className="text-3xl font-bold text-emerald-800 sm:text-5xl">
+          השאר פרטים ונחזור אליך בהקדם
+        </h2>
       </div>
 
-      <div className={formContentContainer}>
+      <div className="flex flex-col items-center justify-center w-full max-w-6xl gap-12 px-6 mx-auto text-center md:flex-row md:items-stretch sm:px-12 md:px-20 md:text-right">
         {/* Right side */}
-        <div className={formImageContainer}>
+        <div className="items-center justify-center flex-1 hidden h-full xl:flex">
           <img
+            className="object-contain w-full h-auto max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl"
             src="/images/business_stock.jpg"
             alt="Eliran"
-            className={formImage}
           />
         </div>
 
         {/* Form */}
-        <div className={formContainer}>
+        <div className="flex flex-col flex-1 justify-center bg-transparent p-8 border-2 border-emerald-800 w-full max-w-md h-full min-h-[380px]">
           {isSubmitted ? (
-            <div className={successContainer}>
-              <h2 className={successTitle}>הפרטים נשלחו בהצלחה</h2>
-              <p className={successText}>נחזור אליך בהקדם האפשרי.</p>
+            <div className="flex flex-col items-center justify-center h-full">
+              <h2 className="text-2xl font-bold text-center text-emerald-900">
+                הפרטים נשלחו בהצלחה
+              </h2>
+              <p className="mt-2 text-lg text-center text-gray-700">
+                נחזור אליך בהקדם האפשרי.
+              </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="w-full flex flex-col">
+            <form onSubmit={handleSubmit} className="flex flex-col w-full">
               {/* Name */}
-              <div className={inputContainer}>
+              <div className="mb-4">
                 <input
+                  className="w-full p-3 text-black bg-white border rounded-md border-stone-400 placeholder-stone-400"
                   id="name"
                   name="name"
                   type="text"
-                  className={inputField}
                   placeholder="שם מלא"
                   required
                   autoComplete="name"
@@ -64,12 +55,12 @@ const FormSection: React.FC = () => {
               </div>
 
               {/* Email */}
-              <div className={inputContainer}>
+              <div className="mb-4">
                 <input
+                  className="w-full p-3 text-black bg-white border rounded-md border-stone-400 placeholder-stone-400"
                   id="email"
                   name="email"
                   type="email"
-                  className={inputField}
                   placeholder="אימייל"
                   required
                   autoComplete="email"
@@ -77,19 +68,21 @@ const FormSection: React.FC = () => {
               </div>
 
               {/* Phone Number */}
-              <div className={inputContainer}>
+              <div className="mb-4">
                 <input
+                  className="w-full p-3 text-black bg-white border rounded-md border-stone-400 placeholder-stone-400"
                   id="phone"
                   name="phone"
                   type="text"
-                  className={inputField}
                   placeholder="טלפון"
                   required
                   autoComplete="tel"
                 />
               </div>
 
-              <button className={submitButton}>חזרו אליי!</button>
+              <button className="px-6 py-3 mt-6 font-semibold text-white transition bg-red-400 border-2 border-red-400 rounded-lg hover:bg-orange-600 hover:border-orange-600 hover:text-white">
+                חזרו אליי!
+              </button>
             </form>
           )}
         </div>
@@ -97,5 +90,3 @@ const FormSection: React.FC = () => {
     </section>
   );
 };
-
-export default FormSection;
