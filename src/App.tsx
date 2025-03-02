@@ -1,16 +1,18 @@
+import { Cards } from "./components/Cards";
 import { Footer } from "./components/Footer";
 import { FormSection } from "./components/FormSection";
-import { HeroSection } from "./components/HeroSection";
+import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
-import { ReasonsSection } from "./components/ReasonsSection";
+import { Reasons } from "./components/Reasons";
 
 function App() {
   return (
     <>
       <Navbar />
-      <HeroSection />
+      <Hero />
       <FormSection />
-      <ReasonsSection />
+      <Cards />
+      <Reasons />
       <Footer />
     </>
   );

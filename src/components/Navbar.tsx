@@ -1,26 +1,16 @@
-import { FaWhatsapp } from "react-icons/fa";
+import { Box } from "@radix-ui/themes/components/box";
+import { Container } from "@radix-ui/themes/components/container";
 
-export const Navbar: React.FC = () => {
+export const Navbar = () => {
   return (
-    <div className="w-full px-6 bg-orange-100 sm:px-12 md:px-20">
-      <div className="relative w-full mx-auto max-w-7xl">
-        <nav className="flex items-center justify-between py-4">
-          {/* Logo */}
-          <div className="text-2xl font-bold text-black">הלוגו של אלירן</div>
-        </nav>
-      </div>
-
-      {/* WhatsApp Icon */}
-      <div className="fixed z-50 top-4 left-6 sm:left-12 md:left-20">
-        <a
-          className="text-green-500 transition hover:text-green-600"
-          href="https://wa.me/972547963334"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <FaWhatsapp size={44} strokeWidth={5} />
-        </a>
-      </div>
-    </div>
+    <Box className="relative bg-orange-100 w-screen max-w-full h-16">
+      <Container className="mx-auto px-6 py-2 max-w-7xl h-full">
+        <img
+          className="w-auto h-14 md:h-16"
+          src="/images/placeholder_logo.png"
+          alt="logo"
+        />
+      </Container>
+    </Box>
   );
 };
