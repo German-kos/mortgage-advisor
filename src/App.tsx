@@ -8,12 +8,7 @@ import { Reasons } from "./components/Reasons";
 function App() {
   return (
     <>
-      <Navbar />
       <Hero />
-      <FormSection />
-      <Cards />
-      <Reasons />
-      <Footer />
     </>
   );
 }

@@ -1,39 +1,31 @@
 import { Box } from "@radix-ui/themes/components/box";
 import { Grid } from "@radix-ui/themes/components/grid";
 import { Container } from "@radix-ui/themes/components/container";
-import { Modal } from "./Modal_temp";
-import { useState } from "react";
+import { Button } from "@radix-ui/themes/src/index.js";
 
 export const Hero = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
-    <Box className="relative flex justify-center items-center bg-orange-100 w-screen max-w-full min-h-[calc(100vh-64px)]">
-      <Container className="mx-auto px-6 py-2 max-w-7xl h-full">
-        <Grid className="gap-8 grid grid-cols-1 md:grid-cols-2 h-full">
-          {/* Right */}
-          <div className="flex flex-col justify-center items-center md:items-end py-2 w-full">
-            <h1 className="w-full font-bold text-emerald-800 text-4xl sm:text-5xl text-center md:text-right leading-tight">
-              ייעוץ המשכנתאות הטוב ביותר בשבילכם
-            </h1>
-            <p className="mt-4 w-full font-semibold text-stone-500 text-lg sm:text-xl text-center md:text-right">
-              אנחנו כאן לעזור לכם לעשות את הבחירה הנכונה ביותר בשבילכם
-            </p>
-            <div className="md:w-full">
-              <Modal open={isModalOpen} setOpen={setIsModalOpen} />
+    <Box className="flex justify-center bg-white w-full">
+      <Grid className="gap-16 grid py-16">
+        <Container className="px-8 max-w-7xl">
+          <div className="gap-12 grid max-w-5xl">
+            <div className="gap-6 grid">
+              <h1 className="font-semibold text-[#101828] text-6xl">
+                פשטות במשכנתאות – היועץ האמין שלך למשכנתאות
+              </h1>
+              <p className="max-w-[575px] font-normal text-[#475467] text-xl">
+                קבל ייעוץ מומחה ואת אפשרויות ההלוואה הטובות ביותר לבית חלומותיך.
+              </p>
             </div>
+            <Button className="bg-[#F39C12] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] px-[22px] py-4 border-[#F39C12] border-[1px] rounded-[8px] max-w-[116px] font-semibold text-white text-lg">
+              צור קשר
+            </Button>
           </div>
-
-          {/* Left */}
-          <div className="flex bg-emerald-800 py-2">
-            <img
-              className="w-full h-auto max-h-[50vh] md:max-h-full object-contain"
-              src="/images/business_stock.jpg"
-              alt="Eliran"
-            />
-          </div>
-        </Grid>
-      </Container>
+        </Container>
+        <div className="px-8">
+          <img src="/images/Hero.png" alt="Hero" />
+        </div>
+      </Grid>
     </Box>
   );
 };
