@@ -1,11 +1,11 @@
 import { Box } from "@radix-ui/themes/components/box";
 import { Grid } from "@radix-ui/themes/components/grid";
 import { Container } from "@radix-ui/themes/components/container";
-import { Button } from "@radix-ui/themes/src/index.js";
+import { Button, Link } from "@radix-ui/themes/src/index.js";
 
 export const Hero = () => {
   return (
-    <Box className="flex justify-center bg-white w-full">
+    <Box className="flex justify-center bg-transparent w-full">
       <Grid className="gap-16 grid py-16">
         <Container className="px-8 max-w-7xl">
           <div className="gap-12 grid max-w-5xl">
@@ -22,8 +22,16 @@ export const Hero = () => {
             </Button>
           </div>
         </Container>
-        <div className="px-8">
+        <div className="relative px-8">
           <img src="/images/Hero.png" alt="Hero" />
+          <Link
+            className="right-[-8px] bottom-[-46px] absolute rounded-full"
+            href="https://wa.me/972547963334"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="/images/Whatsapp.png" alt="whatsapp" />
+          </Link>
         </div>
       </Grid>
     </Box>
