@@ -1,0 +1,13 @@
+diff --git a/node_modules/@radix-ui/themes/src/components/slider.tsx b/node_modules/@radix-ui/themes/src/components/slider.tsx
+index 492a3fb..62a150f 100644
+--- a/node_modules/@radix-ui/themes/src/components/slider.tsx
++++ b/node_modules/@radix-ui/themes/src/components/slider.tsx
+@@ -40,7 +40,7 @@ const Slider = React.forwardRef<SliderElement, SliderProps>((props, forwardedRef
+           data-inverted={sliderProps.inverted ? '' : undefined}
+         />
+       </SliderPrimitive.Track>
+-      {(sliderProps.value ?? sliderProps.defaultValue ?? []).map((value, index) => (
++      {(sliderProps.value ?? sliderProps.defaultValue ?? []).map((_value, index) => (
+         <SliderPrimitive.Thumb
+           key={index}
+           className="rt-SliderThumb"
