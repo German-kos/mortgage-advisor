@@ -1,7 +1,5 @@
 import { Box } from "@radix-ui/themes/components/box";
 import { Grid } from "@radix-ui/themes/components/grid";
-import { Container } from "@radix-ui/themes/components/container";
-import { Button, Link } from "@radix-ui/themes/src/index.js";
 import { CustomContainer } from "./CustomContainer";
 import { PrimaryButton } from "./PrimaryButton";
 
