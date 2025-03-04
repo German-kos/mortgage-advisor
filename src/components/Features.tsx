@@ -50,10 +50,10 @@ export const Features = () => {
               <p className="font-semibold text-[#2C3E50] text-[16px]">
                 השירותים שלנו
               </p>
-              <h2 className="font-semibold text-[#101828] text-4xl">
+              <h2 className="font-semibold text-[#101828] text-3xl sm:text-4xl">
                 שירותי משכנתאות מקצועיים בהתאמה אישית עבורך
               </h2>
-              <p className="font-normal text-[#475467] text-xl">
+              <p className="font-normal text-[#475467] text-lg sm:text-xl">
                 ממציאת ההלוואה הנכונה ועד להשגת הריביות הטובות ביותר, אנו מספקים
                 ייעוץ מומחה וליווי ללא מאמץ כדי להפוך את תהליך המימון לביתך לחלק
                 וללא לחץ.
@@ -62,7 +62,7 @@ export const Features = () => {
           </div>
 
           <div className="max-w-7xl">
-            <Grid className="gap-8 grid grid-cols-3 grid-rows-2">
+            <Grid className="gap-8 grid grid-cols-2 min-[500px]:grid-cols-3 grid-rows-3 min-[500px]:grid-rows-2">
               {list.map((item, index) => (
                 <div
                   className="flex flex-col items-center gap-3 text-center"
@@ -82,7 +82,7 @@ export const Features = () => {
 
                   {/* Title & Text */}
                   <div>
-                    <h3 className="font-semibold text-[#101828] text-xl">
+                    <h3 className="font-semibold text-[#101828] text-base">
                       {item.title}
                     </h3>
                     <p className="font-normal text-[#475467] text-[16px]">
