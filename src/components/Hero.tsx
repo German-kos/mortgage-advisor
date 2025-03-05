@@ -1,11 +1,11 @@
-import { Box } from "@radix-ui/themes/components/box";
 import { Grid } from "@radix-ui/themes/components/grid";
 import { CustomContainer } from "./CustomContainer";
 import { PrimaryButton } from "./PrimaryButton";
+import { CustomBox } from "./CustomBox";
 
 export const Hero = () => {
   return (
-    <Box className="flex justify-center bg-transparent w-full">
+    <CustomBox>
       <Grid className="gap-12 sm:gap-16 grid py-8 sm:py-16">
         <CustomContainer>
           <div className="gap-12 grid max-w-5xl">
@@ -38,6 +38,6 @@ export const Hero = () => {
           </Link> */}
         </div>
       </Grid>
-    </Box>
+    </CustomBox>
   );
 };
