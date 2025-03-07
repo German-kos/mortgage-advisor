@@ -1,3 +1,4 @@
+import { About } from "./components/About";
 import { Features } from "./components/Features";
 import { FormSection } from "./components/FormSection";
 import { Hero } from "./components/Hero";
@@ -12,6 +13,7 @@ function App() {
       </div>
       <Features />
       <FormSection />
+      <About />
     </>
   );
 }
