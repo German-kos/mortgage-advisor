@@ -4,6 +4,7 @@ import { CustomRadixField } from "./CustomFormComponents";
 import { Checkbox } from "radix-ui";
 import { CheckIcon } from "@radix-ui/react-icons";
 import { Box } from "@radix-ui/themes/components/box";
+import { Button } from "@radix-ui/themes/src/index.js";
 
 export const Form = () => {
   const fullNameFields = [
@@ -80,9 +81,9 @@ export const Form = () => {
 
           {/* Submit Button */}
           <RadixForm.Submit asChild>
-            <button className="bg-red-400 hover:bg-red-500 mx-auto rounded-lg w-full h-[45px] font-bold text-white text-xl transition">
-              חזרו אליי!
-            </button>
+            <Button className="bg-[#F39C12] hover:bg-[#f36c12] mx-auto rounded-lg w-full h-[45px] font-semibold text-white text-base transition">
+              בקשת שיחה חינם{" "}
+            </Button>
           </RadixForm.Submit>
         </Grid>
       </RadixForm.Root>
