@@ -21,7 +21,7 @@ export const CustomRadixField = ({
 }: CustomRadixFieldProps) => {
   return (
     <Form.Field name={name} key={key}>
-      <div>
+      <div className="flex justify-between">
         <Form.Label className="font-medium text-[#344054] text-sm">
           {text}
         </Form.Label>

@@ -1,9 +1,9 @@
-import { Container } from "@radix-ui/themes/components/container";
 import { Grid } from "@radix-ui/themes/components/grid";
 import { Form as RadixForm } from "radix-ui";
 import { CustomRadixField } from "./CustomFormComponents";
 import { Checkbox } from "radix-ui";
 import { CheckIcon } from "@radix-ui/react-icons";
+import { Box } from "@radix-ui/themes/components/box";
 
 export const Form = () => {
   const fullNameFields = [
@@ -12,10 +12,11 @@ export const Form = () => {
   ];
 
   return (
-    <Container className="flex flex-col justify-between max-w-[480px] h-full">
-      {/* Title Section - Hugs the Top */}
-      <div className="gap-5 grid max-w-md">
-        <h2 className="font-semibold text-[#101828] text-4xl">
+    <Box className="flex flex-col lg:justify-between md:gap-4 xl:gap-5 max-w-[480px] h-full">
+      {/* <Box className="flex flex-col justify-between max-w-[480px] h-full"> */}
+      {/* Title Section - Shrinks on smaller screens */}
+      <div className="gap-2 md:gap-4 xl:gap-5 grid max-w-md">
+        <h2 className="font-semibold text-[#101828] text-3xl xl:text-4xl">
           קבל ייעוץ חינם
         </h2>
         <p className="font-normal text-[#475467] text-lg">
@@ -23,12 +24,8 @@ export const Form = () => {
         </p>
       </div>
 
-      {/* Spacer - Moves the Form Down While Keeping Section Height Equal to the Image */}
-      <div className="flex-grow" />
-
-      {/* Form Section - Now Sits at the Bottom, Adjusted */}
-      <RadixForm.Root className="w-full">
-        <Grid className="gap-6 grid">
+      <RadixForm.Root className="pb-6 md:pb-0 w-full">
+        <Grid className="gap-4 md:gap-6 grid">
           {/* Name Fields */}
           <div className="gap-8 grid grid-cols-2 grid-rows-1">
             {fullNameFields.map((field, index) => (
@@ -65,8 +62,8 @@ export const Form = () => {
           {/* Terms & Conditions */}
           <Grid className="flex items-center gap-3">
             <Checkbox.Root
-              className="flex justify-center items-center bg-white hover:bg-violet3 shadow-[0_2px_10px] shadow-blackA4 focus:shadow-[0_0_0_2px_black] rounded outline-none size-[25px] appearance-none"
-              defaultChecked
+              className="flex justify-center items-center bg-white hover:bg-[#f1f1f1] focus:bg-[#f1f1f1] border border-[#D0D5DD] rounded outline-none size-[25px] transition appearance-none"
+              required
               id="c1"
             >
               <Checkbox.Indicator className="text-violet11">
@@ -74,10 +71,10 @@ export const Form = () => {
               </Checkbox.Indicator>
             </Checkbox.Root>
             <label
-              className="pl-[15px] text-[15px] text-white leading-none"
+              className="font-normal text-[#475467] text-base text-right leading-none"
               htmlFor="c1"
             >
-              Accept terms and conditions.
+              אתה מסכים למדיניות הפרטיות הידידותית שלנו.
             </label>
           </Grid>
 
@@ -89,6 +86,6 @@ export const Form = () => {
           </RadixForm.Submit>
         </Grid>
       </RadixForm.Root>
-    </Container>
+    </Box>
   );
 };
