@@ -42,7 +42,7 @@ export const Features = () => {
     },
   ];
   return (
-    <Box className="flex justify-center bg-[#F8F9FA] py-24 w-full">
+    <Box className="flex justify-center bg-[#F8F9FA] py-8 sm:py-16 w-full">
       <Container className="px-8 w-full max-w-screen-xl">
         <Grid className="gap-16 grid">
           <div className="flex justify-center w-full max-w-7xl">
