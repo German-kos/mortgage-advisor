@@ -1,21 +1,30 @@
+import { useState } from "react";
 import { Grid } from "@radix-ui/themes/components/grid";
 import { Form as RadixForm } from "radix-ui";
 import { CustomRadixField } from "./CustomFormComponents";
-import { Checkbox } from "radix-ui";
-import { CheckIcon } from "@radix-ui/react-icons";
 import { Box } from "@radix-ui/themes/components/box";
 import { Button } from "@radix-ui/themes/src/index.js";
 
 export const Form = () => {
+  const [isChecked, setIsChecked] = useState(false);
+  const [showError, setShowError] = useState(false);
+
   const fullNameFields = [
     { name: "firstName", label: "שם פרטי", type: "text" },
     { name: "lastName", label: "שם משפחה", type: "text" },
   ];
 
+  const handleSubmit = (event: React.FormEvent) => {
+    if (!isChecked) {
+      event.preventDefault(); // Prevent submission if checkbox is not checked
+      setShowError(true); // Show error message
+      return;
+    }
+    setShowError(false); // Hide error if checkbox is checked
+  };
+
   return (
     <Box className="flex flex-col lg:justify-between md:gap-4 xl:gap-5 max-w-[480px] h-full">
-      {/* <Box className="flex flex-col justify-between max-w-[480px] h-full"> */}
-      {/* Title Section - Shrinks on smaller screens */}
       <div className="gap-2 md:gap-4 xl:gap-5 grid max-w-md">
         <h2 className="font-semibold text-[#101828] text-3xl xl:text-4xl">
           קבל ייעוץ חינם
@@ -25,14 +34,14 @@ export const Form = () => {
         </p>
       </div>
 
-      <RadixForm.Root className="pb-6 md:pb-0 w-full">
+      <RadixForm.Root className="pb-6 md:pb-0 w-full" onSubmit={handleSubmit}>
         <Grid className="gap-4 md:gap-6 grid">
           {/* Name Fields */}
           <div className="gap-8 grid grid-cols-2 grid-rows-1">
             {fullNameFields.map((field, index) => (
               <CustomRadixField
-                name={field.name}
                 key={index}
+                name={field.name}
                 text={field.label}
                 type={field.type}
                 placeholder={`${field.label}...`}
@@ -42,8 +51,8 @@ export const Form = () => {
 
           {/* Phone */}
           <CustomRadixField
+            key="phone"
             name="phone"
-            key={3}
             text="טלפון"
             type="tel"
             placeholder="0501234567"
@@ -51,8 +60,8 @@ export const Form = () => {
 
           {/* Email */}
           <CustomRadixField
+            key="email"
             name="email"
-            key={4}
             text="אימייל"
             type="email"
             placeholder="example@mail.com"
@@ -61,28 +70,38 @@ export const Form = () => {
           />
 
           {/* Terms & Conditions */}
-          <Grid className="flex items-center gap-3">
-            <Checkbox.Root
-              className="flex justify-center items-center bg-white hover:bg-[#f1f1f1] focus:bg-[#f1f1f1] border border-[#D0D5DD] rounded outline-none size-[25px] transition appearance-none"
-              required
-              id="c1"
-            >
-              <Checkbox.Indicator className="text-violet11">
-                <CheckIcon />
-              </Checkbox.Indicator>
-            </Checkbox.Root>
-            <label
-              className="font-normal text-[#475467] text-base text-right leading-none"
-              htmlFor="c1"
-            >
-              אתה מסכים למדיניות הפרטיות הידידותית שלנו.
-            </label>
+          <Grid className="flex flex-col items-start gap-2">
+            <div className="flex items-center gap-3">
+              <input
+                type="checkbox"
+                id="c1"
+                checked={isChecked}
+                onChange={(e) => {
+                  setIsChecked(e.target.checked);
+                  setShowError(false); // Hide error if checked
+                }}
+                className="border border-[#D0D5DD] rounded w-5 h-5 cursor-pointer"
+              />
+              <label
+                className="font-normal text-base text-right leading-none"
+                htmlFor="c1"
+              >
+                אתה מסכים למדיניות הפרטיות הידידותית שלנו.
+              </label>
+            </div>
+
+            {/* Error Message */}
+            {showError && (
+              <p className="mt-1 text-red-500 text-sm">
+                יש לאשר את התנאים לפני שליחת הטופס.
+              </p>
+            )}
           </Grid>
 
           {/* Submit Button */}
           <RadixForm.Submit asChild>
             <Button className="bg-[#F39C12] hover:bg-[#f36c12] mx-auto rounded-lg w-full h-[45px] font-semibold text-white text-base transition">
-              בקשת שיחה חינם{" "}
+              בקשת שיחה חינם
             </Button>
           </RadixForm.Submit>
         </Grid>

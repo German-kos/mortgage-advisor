@@ -2,7 +2,6 @@ import { Form } from "radix-ui";
 
 type CustomRadixFieldProps = {
   name: string;
-  key: number;
   text: string;
   type: string;
   placeholder: string;
@@ -12,7 +11,6 @@ type CustomRadixFieldProps = {
 
 export const CustomRadixField = ({
   name,
-  key,
   text,
   type,
   placeholder,
@@ -20,20 +18,20 @@ export const CustomRadixField = ({
   mismatchText,
 }: CustomRadixFieldProps) => {
   return (
-    <Form.Field name={name} key={key}>
+    <Form.Field name={name}>
       <div className="flex justify-between">
         <Form.Label className="font-medium text-[#344054] text-sm">
           {text}
         </Form.Label>
         <Form.Message
-          className="opacity-80 font-semibold text-md text-red-600 text-left"
+          className="opacity-80 font-medium text-red-600 text-sm text-left"
           match="valueMissing"
         >
           שדה חובה *
         </Form.Message>
         {mismatch && mismatchText && (
           <Form.Message
-            className="opacity-80 font-semibold text-md text-red-600 text-left"
+            className="opacity-80 font-medium text-red-600 text-sm text-left"
             match="typeMismatch"
           >
             {mismatchText}
