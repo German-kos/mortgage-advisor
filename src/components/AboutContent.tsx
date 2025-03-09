@@ -36,7 +36,9 @@ export const AboutContent = () => {
                 src="/images/icons/Check.png"
                 alt="Check"
               />
-              <p className="font-medium text-lg leading-none">{item}</p>
+              <p className="font-medium text-[#2C3E50] text-lg leading-none">
+                {item}
+              </p>
             </div>
           ))}
         </div>
