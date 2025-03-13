@@ -4,6 +4,7 @@ import { Footer } from "./components/Footer";
 import { FormSection } from "./components/FormSection";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
+import { Testimonials } from "./components/Testimonials";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Features />
       <FormSection />
       <About />
+      <Testimonials />
       <Footer />
     </>
   );
