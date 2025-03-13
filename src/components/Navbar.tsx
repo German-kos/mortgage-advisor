@@ -1,16 +1,28 @@
 import { Grid } from "@radix-ui/themes/components/grid";
-import { Link } from "@radix-ui/themes/src/index.js";
+import { Button } from "@radix-ui/themes/src/index.js";
 import { CustomContainer } from "./CustomContainer";
 import { PrimaryButton } from "./PrimaryButton";
 import { Logo } from "./Logo";
 import { CustomBox } from "./CustomBox";
 
-export const Navbar = () => {
+interface NavbarProps {
+  testimonialsRef: React.RefObject<HTMLDivElement | null>;
+  formRef: React.RefObject<HTMLDivElement | null>;
+  aboutRef: React.RefObject<HTMLDivElement | null>;
+  featuresRef: React.RefObject<HTMLDivElement | null>;
+}
+
+export const Navbar = ({
+  testimonialsRef,
+  formRef,
+  aboutRef,
+  featuresRef,
+}: NavbarProps) => {
   const links = [
-    { title: "שירותים", url: "#features" },
-    { title: "צור קשר", url: "#contact" },
-    { title: "עליי", url: "#about" },
-    { title: "המלצות", url: "#testimonials" },
+    { title: "שירותים", ref: featuresRef },
+    { title: "צור קשר", ref: formRef },
+    { title: "עליי", ref: aboutRef },
+    { title: "המלצות", ref: testimonialsRef },
   ];
 
   return (
@@ -24,13 +36,17 @@ export const Navbar = () => {
             {/* Navigation Links */}
             <div className="hidden lg:flex gap-8">
               {links.map((link, index) => (
-                <Link
-                  className="font-semibold text-[#475467] text-[16px] hover:text-blue-500 transition"
+                <Button
                   key={index}
-                  href={link.url}
+                  className="font-semibold text-[#475467] hover:text-blue-500 transition"
+                  onClick={() =>
+                    link.ref.current?.scrollIntoView({
+                      behavior: "smooth",
+                    })
+                  }
                 >
                   {link.title}
-                </Link>
+                </Button>
               ))}
             </div>
           </div>
