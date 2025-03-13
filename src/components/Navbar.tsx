@@ -38,7 +38,7 @@ export const Navbar = ({
               {links.map((link, index) => (
                 <Button
                   key={index}
-                  className="font-semibold text-[#475467] hover:text-blue-500 transition"
+                  className="font-semibold text-[#475467] hover:text-blue-500 transition cursor-pointer"
                   onClick={() =>
                     link.ref.current?.scrollIntoView({
                       behavior: "smooth",
