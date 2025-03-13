@@ -1,5 +1,6 @@
 import { About } from "./components/About";
 import { Features } from "./components/Features";
+import { Footer } from "./components/Footer";
 import { FormSection } from "./components/FormSection";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
@@ -14,6 +15,7 @@ function App() {
       <Features />
       <FormSection />
       <About />
+      <Footer />
     </>
   );
 }
