@@ -1,28 +1,16 @@
 import { Grid } from "@radix-ui/themes/components/grid";
-import { Button } from "@radix-ui/themes/src/index.js";
 import { CustomContainer } from "./CustomContainer";
 import { PrimaryButton } from "./PrimaryButton";
 import { Logo } from "./Logo";
 import { CustomBox } from "./CustomBox";
+import { Link } from "react-scroll";
 
-interface NavbarProps {
-  testimonialsRef: React.RefObject<HTMLDivElement | null>;
-  formRef: React.RefObject<HTMLDivElement | null>;
-  aboutRef: React.RefObject<HTMLDivElement | null>;
-  featuresRef: React.RefObject<HTMLDivElement | null>;
-}
-
-export const Navbar = ({
-  testimonialsRef,
-  formRef,
-  aboutRef,
-  featuresRef,
-}: NavbarProps) => {
+export const Navbar = () => {
   const links = [
-    { title: "שירותים", ref: featuresRef },
-    { title: "צור קשר", ref: formRef },
-    { title: "עליי", ref: aboutRef },
-    { title: "המלצות", ref: testimonialsRef },
+    { title: "שירותים", ref: "features" },
+    { title: "צור קשר", ref: "formSection" },
+    { title: "עליי", ref: "about" },
+    { title: "המלצות", ref: "testimonials" },
   ];
 
   return (
@@ -36,17 +24,16 @@ export const Navbar = ({
             {/* Navigation Links */}
             <div className="hidden lg:flex gap-8">
               {links.map((link, index) => (
-                <Button
+                <Link
+                  className="font-semibold text-[#475467] hover:text-blue-500 transition cursor-pointer select-none"
+                  spy={true}
+                  smooth={true}
                   key={index}
-                  className="font-semibold text-[#475467] hover:text-blue-500 transition cursor-pointer"
-                  onClick={() =>
-                    link.ref.current?.scrollIntoView({
-                      behavior: "smooth",
-                    })
-                  }
+                  to={link.ref}
+                  duration={500}
                 >
                   {link.title}
-                </Button>
+                </Link>
               ))}
             </div>
           </div>
