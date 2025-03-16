@@ -3,7 +3,7 @@ import "./WhatsappButton.css"; // Import the CSS file
 
 export const WhatsappButton = () => {
   return (
-    <div className="right-6 bottom-6 z-[999] fixed">
+    <div className="right-2 md:right-4 lg:right-6 bottom-2 md:bottom-4 lg:bottom-6 z-[999] fixed">
       {/* Pulsing Background */}
       <div className="whatsapp-pulse"></div>
 
@@ -16,7 +16,7 @@ export const WhatsappButton = () => {
         <img
           src="/images/Whatsapp.png"
           alt="whatsapp"
-          className="whatsapp-beat w-20 h-20"
+          className="whatsapp-beat w-16 md:w-20 lg:w-24 h-16 md:h-20 lg:h-24"
         />
       </Link>
     </div>
