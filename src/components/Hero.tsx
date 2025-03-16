@@ -27,15 +27,6 @@ export const Hero = () => {
             className="w-full h-auto object-cover"
             loading="lazy"
           />
-
-          {/* <Link
-            className="right-[-8px] bottom-[-46px] absolute rounded-full"
-            href="https://wa.me/972547963334"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src="/images/Whatsapp.png" alt="whatsapp" />
-          </Link> */}
         </div>
       </Grid>
     </CustomBox>
