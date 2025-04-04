@@ -2,8 +2,12 @@ import { Grid } from "@radix-ui/themes/components/grid";
 import { CustomContainer } from "./CustomContainer";
 import { PrimaryButton } from "./PrimaryButton";
 import { CustomBox } from "./CustomBox";
+import { useState } from "react";
+import { Modal } from "./Modal";
 
 export const Hero = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <CustomBox>
       <Grid className="gap-12 sm:gap-16 grid py-8 sm:py-16">
@@ -17,9 +21,10 @@ export const Hero = () => {
                 קבל ייעוץ מומחה ואת אפשרויות ההלוואה הטובות ביותר לבית חלומותיך.
               </p>
             </div>
-            <PrimaryButton text="צור קשר" />
+            <PrimaryButton onClick={() => setModalOpen(true)} text="צור קשר" />
           </div>
         </CustomContainer>
+        <Modal open={modalOpen} onClose={() => setModalOpen(false)} />
         <div className="relative flex justify-center lg:justify-end px-4 lg:px-8 w-full max-w-3xl lg:max-w-7xl">
           <img
             src="/images/Hero.png"
