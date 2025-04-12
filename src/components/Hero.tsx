@@ -4,6 +4,7 @@ import { PrimaryButton } from "./PrimaryButton";
 import { CustomBox } from "./CustomBox";
 import { useEffect, useRef, useState } from "react";
 import { Modal } from "./Modal";
+import { scroller } from "react-scroll";
 
 export const Hero = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -28,6 +29,19 @@ export const Hero = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleCTAClick = () => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      scroller.scrollTo("formSection", {
+        duration: 500,
+        smooth: true,
+        offset: -100,
+      });
+    } else {
+      setModalOpen(true);
+    }
+  };
+
   return (
     <CustomBox>
       <Grid className="gap-12 sm:gap-16 grid py-8 sm:py-16">
@@ -41,7 +55,7 @@ export const Hero = () => {
                 קבל ייעוץ מומחה ואת אפשרויות ההלוואה הטובות ביותר לבית חלומותיך.
               </p>
             </div>
-            <PrimaryButton onClick={() => setModalOpen(true)} text="צור קשר" />
+            <PrimaryButton onClick={handleCTAClick} text="צור קשר" />
           </div>
         </CustomContainer>
         <Modal open={modalOpen} onClose={() => setModalOpen(false)} />
