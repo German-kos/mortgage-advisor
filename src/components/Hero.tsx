@@ -2,11 +2,27 @@ import { Grid } from "@radix-ui/themes/components/grid";
 import { CustomContainer } from "./CustomContainer";
 import { PrimaryButton } from "./PrimaryButton";
 import { CustomBox } from "./CustomBox";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Modal } from "./Modal";
 
 export const Hero = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const hasOpened = useRef(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const reachedBottom =
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - 50;
+
+      if (reachedBottom && !hasOpened.current) {
+        setModalOpen(true);
+        hasOpened.current = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <CustomBox>
