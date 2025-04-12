@@ -5,7 +5,11 @@ import { CustomRadixField } from "./CustomFormComponents";
 import { Box } from "@radix-ui/themes/components/box";
 import { Button } from "@radix-ui/themes/src/index.js";
 
-export const Form = () => {
+type FormProps = {
+  showSubtext?: boolean;
+};
+
+export const Form = ({ showSubtext = true }: FormProps) => {
   const [isChecked, setIsChecked] = useState(false);
   const [showError, setShowError] = useState(false);
 
@@ -29,9 +33,11 @@ export const Form = () => {
         <h2 className="font-semibold text-[#101828] text-3xl xl:text-4xl">
           קבל ייעוץ חינם
         </h2>
-        <p className="font-normal text-[#475467] text-lg">
-          הצוות שלנו ישמח לשוחח איתך ולעזור לך למצוא את הפתרון הטוב ביותר.
-        </p>
+        {showSubtext && (
+          <p className="font-normal text-[#475467] text-lg">
+            הצוות שלנו ישמח לשוחח איתך ולעזור לך למצוא את הפתרון הטוב ביותר.
+          </p>
+        )}
       </div>
 
       <RadixForm.Root className="pb-6 md:pb-0 w-full" onSubmit={handleSubmit}>

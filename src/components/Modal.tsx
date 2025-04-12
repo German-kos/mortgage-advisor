@@ -48,7 +48,7 @@ export const Modal = ({ open, onClose }: CustomModalProps) => {
           <div className="flex flex-col items-center px-6 py-4 w-full text-center">
             <Dialog.Title></Dialog.Title>
             <Dialog.Description></Dialog.Description>
-            <Form />
+            <Form showSubtext={false} />
           </div>
         </Dialog.Content>
       </Dialog.Portal>
