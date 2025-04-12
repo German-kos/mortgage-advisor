@@ -10,6 +10,10 @@ export const Hero = () => {
   const hasOpened = useRef(false);
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) return;
+
     const handleScroll = () => {
       const reachedBottom =
         window.innerHeight + window.scrollY >= document.body.offsetHeight - 50;
