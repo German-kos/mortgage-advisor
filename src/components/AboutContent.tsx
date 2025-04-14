@@ -1,6 +1,7 @@
 import { Box } from "@radix-ui/themes/components/box";
 import { Grid } from "@radix-ui/themes/components/grid";
 import { PrimaryButton } from "./PrimaryButton";
+import { Link } from "react-scroll";
 
 export const AboutContent = () => {
   const checkItems = [
@@ -44,7 +45,16 @@ export const AboutContent = () => {
         </div>
 
         <div className="flex justify-center lg:justify-start">
-          <PrimaryButton text="צור קשר" />
+          <Link
+            className="font-semibold text-[#475467] hover:text-blue-500 transition cursor-pointer select-none"
+            spy={true}
+            smooth={true}
+            to={"formSection"}
+            offset={-100}
+            duration={500}
+          >
+            <PrimaryButton text="צור קשר" />
+          </Link>
         </div>
       </Grid>
     </Box>

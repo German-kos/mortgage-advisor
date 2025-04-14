@@ -4,6 +4,7 @@ import { PrimaryButton } from "./PrimaryButton";
 import { Logo } from "./Logo";
 import { CustomBox } from "./CustomBox";
 import { Link } from "react-scroll";
+import { Link as LinkRadix } from "@radix-ui/themes/src/index.js";
 
 export const Navbar = () => {
   const links = [
@@ -38,7 +39,14 @@ export const Navbar = () => {
             </div>
           </div>
           <div className="flex justify-end">
-            <PrimaryButton text="התחל עכשיו" />
+            <LinkRadix
+              className="relative rounded-full focus:outline-none transition-transform"
+              href="https://wa.me/972547963334?text=היי,%20אני%20אשמח%20שנדבר%20על%20המשכנתא%20:)"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <PrimaryButton text="התחל עכשיו" />
+            </LinkRadix>
           </div>
         </Grid>
       </CustomContainer>
