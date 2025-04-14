@@ -11,8 +11,8 @@ export const Footer = () => {
       link: "https://facebook.com/",
     },
     {
-      name: "X",
-      link: "https://x.com/",
+      name: "Instagram",
+      link: "https://instagram.com/",
     },
     {
       name: "LinkedIn",
