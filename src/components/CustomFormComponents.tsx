@@ -7,6 +7,8 @@ type CustomRadixFieldProps = {
   placeholder: string;
   mismatch?: boolean;
   mismatchText?: string;
+  badEmail?: boolean;
+  setBadEmail?: (value: boolean) => void;
 };
 
 export const CustomRadixField = ({
@@ -16,6 +18,8 @@ export const CustomRadixField = ({
   placeholder,
   mismatch,
   mismatchText,
+  badEmail,
+  setBadEmail,
 }: CustomRadixFieldProps) => {
   return (
     <Form.Field name={name}>
@@ -37,6 +41,11 @@ export const CustomRadixField = ({
             {mismatchText}
           </Form.Message>
         )}
+        {badEmail && (
+          <Form.Message className="opacity-80 font-medium text-red-600 text-sm text-left">
+            {mismatchText} aaa
+          </Form.Message>
+        )}
       </div>
       <Form.Control asChild>
         <input
@@ -44,6 +53,7 @@ export const CustomRadixField = ({
           type={type}
           required
           placeholder={placeholder}
+          onChange={() => setBadEmail && setBadEmail(false)}
         />
       </Form.Control>
     </Form.Field>

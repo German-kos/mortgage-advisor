@@ -12,19 +12,76 @@ type FormProps = {
 export const Form = ({ showSubtext = true }: FormProps) => {
   const [isChecked, setIsChecked] = useState(false);
   const [showError, setShowError] = useState(false);
+  const [_status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [showEmailError, setShowEmailError] = useState(false);
 
   const fullNameFields = [
     { name: "firstName", label: "שם פרטי", type: "text" },
     { name: "lastName", label: "שם משפחה", type: "text" },
   ];
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const isValidEmail = (email: string): boolean => {
+    // Basic structure check and domain suffix match
+    const pattern = /^[^\s@]+@[^\s@]+\.(com|net|org|co\.il|edu|gov|info|io)$/i;
+    return pattern.test(email);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    if (!isValidEmail(formData.get("email") as string)) {
+      setShowEmailError(true);
+      return;
+    } else {
+      setShowEmailError(false);
+    }
+
     if (!isChecked) {
-      event.preventDefault(); // Prevent submission if checkbox is not checked
+      e.preventDefault(); // Prevent submission if checkbox is not checked
       setShowError(true); // Show error message
       return;
     }
     setShowError(false); // Hide error if checkbox is checked
+
+    setStatus("loading");
+
+    try {
+      const ilTime = new Date().toLocaleString("he-IL", {
+        timeZone: "Asia/Jerusalem",
+        hour12: false,
+        dateStyle: "short",
+        timeStyle: "short",
+      });
+
+      const response = await fetch("https://formspree.io/f/xyzevypk", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.get("firstName") + " " + formData.get("lastName"),
+          phone: formData.get("phone"),
+          email: formData.get("email"),
+          _subject: formData.get("firstName") + " " + formData.get("lastName"),
+          message: `טופס חדש התקבל מהאתר \n ${ilTime}`,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+      } else {
+        console.error("Formspree Error:", await response.text());
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error("Network Error:", err);
+      setStatus("error");
+    }
   };
 
   return (
@@ -73,6 +130,8 @@ export const Form = ({ showSubtext = true }: FormProps) => {
             placeholder="example@mail.com"
             mismatch={true}
             mismatchText="כתובת אימייל לא תקינה *"
+            badEmail={showEmailError}
+            setBadEmail={setShowEmailError}
           />
 
           {/* Terms & Conditions */}
