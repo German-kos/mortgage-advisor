@@ -1,22 +1,26 @@
-import { useState } from "react";
 import { Grid } from "@radix-ui/themes/components/grid";
 import { Form as RadixForm } from "radix-ui";
 import { Box } from "@radix-ui/themes/components/box";
 import { Button } from "@radix-ui/themes/src/index.js";
 import { CustomRadixField } from "@/features/form/components/CustomRadixField";
 import { isValidEmail } from "./validation";
+import { useFormState } from "./hooks/useFormState";
 
 type FormProps = {
   showSubtext?: boolean;
 };
 
 export const Form = ({ showSubtext = true }: FormProps) => {
-  const [isChecked, setIsChecked] = useState(false);
-  const [showError, setShowError] = useState(false);
-  const [_status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
-  const [showEmailError, setShowEmailError] = useState(false);
+  const {
+    isChecked,
+    setIsChecked,
+    showError,
+    setShowError,
+    // status, // add later with loading feature
+    setStatus,
+    showEmailError,
+    setShowEmailError,
+  } = useFormState();
 
   const fullNameFields = [
     { name: "firstName", label: "שם פרטי", type: "text" },

@@ -43,7 +43,7 @@ export const CustomRadixField = ({
         )}
         {badEmail && (
           <Form.Message className="opacity-80 font-medium text-red-600 text-sm text-left">
-            {mismatchText} aaa
+            {mismatchText}
           </Form.Message>
         )}
       </div>
