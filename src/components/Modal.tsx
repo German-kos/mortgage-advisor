@@ -2,7 +2,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import { useState, useEffect } from "react";
 import "./Modal.css"; // Import the CSS file
-import { Form } from "./Form";
+import { Form } from "@/features/form";
 
 interface CustomModalProps {
   open: boolean;

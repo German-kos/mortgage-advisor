@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Grid } from "@radix-ui/themes/components/grid";
 import { Form as RadixForm } from "radix-ui";
-import { CustomRadixField } from "./CustomFormComponents";
 import { Box } from "@radix-ui/themes/components/box";
 import { Button } from "@radix-ui/themes/src/index.js";
+import { CustomRadixField } from "@/features/form/components/CustomRadixField";
+import { isValidEmail } from "./validation";
 
 type FormProps = {
   showSubtext?: boolean;
@@ -21,12 +22,6 @@ export const Form = ({ showSubtext = true }: FormProps) => {
     { name: "firstName", label: "שם פרטי", type: "text" },
     { name: "lastName", label: "שם משפחה", type: "text" },
   ];
-
-  const isValidEmail = (email: string): boolean => {
-    // Basic structure check and domain suffix match
-    const pattern = /^[^\s@]+@[^\s@]+\.(com|net|org|co\.il|edu|gov|info|io)$/i;
-    return pattern.test(email);
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
