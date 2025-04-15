@@ -5,6 +5,7 @@ import { Button } from "@radix-ui/themes/src/index.js";
 import { CustomRadixField } from "@/features/form/components/CustomRadixField";
 import { isValidEmail } from "./validation";
 import { useFormState } from "./hooks/useFormState";
+import { fullNameFields } from "./formConfig";
 
 type FormProps = {
   showSubtext?: boolean;
@@ -21,11 +22,6 @@ export const Form = ({ showSubtext = true }: FormProps) => {
     showEmailError,
     setShowEmailError,
   } = useFormState();
-
-  const fullNameFields = [
-    { name: "firstName", label: "שם פרטי", type: "text" },
-    { name: "lastName", label: "שם משפחה", type: "text" },
-  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
