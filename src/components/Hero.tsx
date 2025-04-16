@@ -52,8 +52,7 @@ export const Hero = () => {
                 משכנתא חכמה, מתחילה בייעוץ נכון!
               </h1>
               <p className="max-w-[300px] sm:max-w-[450px] md:max-w-[575px] font-normal text-[#475467] text-base sm:text-lg md:text-2xl">
-                אני לא עובד בשביל הבנק - אני עובד למענכם כדי שתשלמו פחות
-                ותרוויחו יותר.
+                נוציא מהבנק את המקסימום כדי שתשלמו פחות ותרוויחו יותר.
               </p>
             </div>
             <PrimaryButton onClick={handleCTAClick} text="צור קשר" />
