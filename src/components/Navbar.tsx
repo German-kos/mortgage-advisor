@@ -11,7 +11,7 @@ export const Navbar = () => {
     { title: "שירותים", ref: "features" },
     { title: "צור קשר", ref: "formSection" },
     { title: "עליי", ref: "about" },
-    { title: "המלצות", ref: "testimonials" },
+    // { title: "המלצות", ref: "testimonials" },
   ];
 
   return (
@@ -41,7 +41,7 @@ export const Navbar = () => {
           <div className="flex justify-end">
             <LinkRadix
               className="relative rounded-full focus:outline-none transition-transform"
-              href="https://wa.me/972547963334?text=היי,%20אני%20אשמח%20שנדבר%20על%20המשכנתא%20:)"
+              href="https://wa.me/972542857768?text=היי,%20אני%20אשמח%20שנדבר%20על%20המשכנתא%20:)"
               target="_blank"
               rel="noreferrer"
             >

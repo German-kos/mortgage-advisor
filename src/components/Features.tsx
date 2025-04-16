@@ -35,8 +35,8 @@ export const Features = () => {
       alt: "message-tick",
     },
     {
-      title: "שיפור דירוג האשראי",
-      text: "שפר את דירוג האשראי שלך לתנאים טובים יותר.",
+      title: "משכנתא הפוכה לבני הגיל ה-3",
+      text: "איסוף מסמכים, טיפול בבירוקרטיה, ליווי לפתרון מלא.",
       image: "/images/icons/empty-wallet.png",
       alt: "empty-wallet",
     },
@@ -50,16 +50,13 @@ export const Features = () => {
         <Grid className="gap-16 grid">
           <div className="flex justify-center w-full max-w-7xl">
             <div className="flex flex-col items-center gap-8 max-w-3xl text-center">
-              <p className="font-semibold text-[#2C3E50] text-[16px]">
-                השירותים שלנו
-              </p>
               <h2 className="font-semibold text-[#101828] text-3xl sm:text-4xl">
-                שירותי משכנתאות מקצועיים בהתאמה אישית עבורך
+                השירותים שלנו בהתאמה אישית עבורך
               </h2>
               <p className="font-normal text-[#475467] text-lg sm:text-xl">
-                ממציאת ההלוואה הנכונה ועד להשגת הריביות הטובות ביותר, אנו מספקים
-                ייעוץ מומחה וליווי ללא מאמץ כדי להפוך את תהליך המימון לביתך לחלק
-                וללא לחץ.
+                מבניית התמהיל הנכון עבורכם ועד להשגת הריביות הטובות ביותר, אנו
+                מספקים ייעוץ מומחה וליווי מלא כדי להפוך את התהליך המימון לביתכם
+                לחלק ובטוח.
               </p>
             </div>
           </div>

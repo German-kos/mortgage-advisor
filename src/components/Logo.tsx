@@ -14,7 +14,7 @@ export const Logo = ({ className }: LogoProps) => {
           className
         )}
       >
-        MC LOGO
+        משכנת'ס
       </h1>
     </div>
   );

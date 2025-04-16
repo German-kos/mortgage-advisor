@@ -5,15 +5,14 @@ import { Link } from "react-scroll";
 
 export const AboutContent = () => {
   const checkItems = [
-    "יועץ משכנתאות מוסמך",
-    "יועץ משכנתאות מדורג מוביל",
-    "למעלה מ-10 שנות נסיון",
+    "בניית תמהיל שמתאים לכם, לא לבנק.",
+    "חיסכון אמיתי – גם בכסף וגם בעצבים.",
+    "ליווי אישי לאורך כל הדרך.",
   ];
   return (
     <Box className="flex">
       <Grid className="gap-12 grid my-auto w-full">
         <div>
-          <h3 className="font-semibold text-[#2C3E50] text-base">עליי</h3>
           <h2 className="font-semibold text-[#101828] text-[32px]">
             מומחה המשכנתאות שלך
           </h2>
@@ -21,8 +20,9 @@ export const AboutContent = () => {
 
         <div className="mx-auto max-w-[576px] text-center lg:text-right">
           <p className="font-normal text-[#475467] text-lg">
-            עם למעלה מ-10 שנות ניסיון, עזרתי למאות משפחות להשיג את תנאי המשכנתא
-            הטובים ביותר. המטרה שלי היא להפוך את תהליך המימון לפשוט וללא לחץ.
+            אחרי שנים של ליווי חברים, משפחה ולקוחות – גיליתי כמה חשוב שיהיה
+            מישהו בצד שלך כשמדובר בהחלטה כלכלית כל כך גדולה. ליווי אישי אורך כל
+            הדרך.
           </p>
         </div>
 

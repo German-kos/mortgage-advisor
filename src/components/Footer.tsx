@@ -16,7 +16,7 @@ export const Footer = () => {
     },
     {
       name: "LinkedIn",
-      link: "https://linkedin.com/",
+      link: "http://www.linkedin.com/in/eliran-shlomov",
     },
     {
       name: "Github",
@@ -28,17 +28,17 @@ export const Footer = () => {
     {
       img: "Loc",
       title: "כתובת",
-      content: "רחוב הרצל 1, תל אביב",
+      content: "הצוללים, אשדוד",
     },
     {
       img: "Tel",
       title: "מספר טלפון",
-      content: "+1 (555) 000-0000",
+      content: "054-285-7768",
     },
     {
       img: "Mail",
       title: "אימייל",
-      content: "loremipsum@gmail.com",
+      content: "mashkantes@gmail.com",
     },
   ];
 
@@ -55,7 +55,7 @@ export const Footer = () => {
             <Grid className="gap-8 grid max-w-80">
               <Logo className="text-white" />
               <p className="text-[#EAECF0] text-base">
-                קבל ייעוץ מומחה ואת אפשרויות ההלוואה הטובות ביותר לבית חלומותיך.
+                קבל ייעוץ מומחה ואת אפשרויות המשכנתא הטובות ביותר לבית חלומותיך.
               </p>
               <div className="flex justify-between gap-6">
                 {socials.map((social, index) => (
@@ -96,7 +96,7 @@ export const Footer = () => {
         <div className="px-8 w-full">
           <div className="flex justify-between gap-2 py-8 border-[#ffffff25] border-t-1">
             <p className="font-normal text-[#D0D5DD] text-base">
-              © 2025 MC LOGO. כל הזכויות שמורות.
+              © 2025 משכנת'ס. כל הזכויות שמורות.
             </p>
             <div className="flex sm:flex-row flex-col gap-4">
               {links.map((link, index) => (

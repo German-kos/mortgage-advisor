@@ -49,10 +49,11 @@ export const Hero = () => {
           <div className="gap-12 grid max-w-5xl">
             <div className="gap-4 xs:gap-6 sm:gap-8 grid">
               <h1 className="font-semibold text-[#101828] text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight">
-                פשטות במשכנתאות – היועץ האמין שלך למשכנתאות
+                משכנתא חכמה, מתחילה בייעוץ נכון!
               </h1>
-              <p className="max-w-[300px] sm:max-w-[450px] md:max-w-[575px] font-normal text-[#475467] text-base sm:text-lg md:text-xl">
-                קבל ייעוץ מומחה ואת אפשרויות ההלוואה הטובות ביותר לבית חלומותיך.
+              <p className="max-w-[300px] sm:max-w-[450px] md:max-w-[575px] font-normal text-[#475467] text-base sm:text-lg md:text-2xl">
+                אני לא עובד בשביל הבנק - אני עובד למענכם כדי שתשלמו פחות
+                ותרוויחו יותר.
               </p>
             </div>
             <PrimaryButton onClick={handleCTAClick} text="צור קשר" />

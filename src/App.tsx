@@ -17,7 +17,7 @@ function App() {
       <Features />
       <FormSection />
       <About />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Footer />
       <WhatsappButton />
     </>
