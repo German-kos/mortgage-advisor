@@ -8,11 +8,11 @@ export const Footer = () => {
   const socials = [
     {
       name: "Facebook",
-      link: "https://facebook.com/",
+      link: "https://www.facebook.com/eliran.shlomov",
     },
     {
       name: "Instagram",
-      link: "https://instagram.com/",
+      link: "https://www.instagram.com/eliran_shlomov/",
     },
     {
       name: "LinkedIn",
