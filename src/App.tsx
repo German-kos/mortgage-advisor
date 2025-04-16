@@ -4,7 +4,7 @@ import { Footer } from "./components/Footer";
 import { FormSection } from "./components/FormSection";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
-import { Testimonials } from "./components/Testimonials";
+// import { Testimonials } from "./components/Testimonials";
 import { WhatsappButton } from "./components/WhatsappButton";
 
 function App() {
