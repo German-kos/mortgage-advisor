@@ -14,8 +14,8 @@ const { name, email, phone, time } = event.client_payload;
 const msg = {
   to: "kostiakovg@outlook.com",
   from: "kostiakovg@outlook.com",
-  subject: "New Form Submission",
-  text: "Someone submitted the contact form!",
+  subject: "'ס - ${name}פנייה חדשה מאתר משכנתא!",
+  text: "ליד חדש מהאתר!",
   html: `
   <div dir="rtl" style="text-align: right; font-family: Arial, sans-serif;">
     <h2'ס - ${name}פנייה חדשה מאתר משכנתא!</h2>
