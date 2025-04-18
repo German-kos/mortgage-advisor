@@ -2,7 +2,7 @@ name: Send Email
 
 on:
   repository_dispatch:
-    types: [form-submit]
+    types: [form-submission]
 
 jobs:
   send:
