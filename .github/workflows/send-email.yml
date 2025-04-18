@@ -1,0 +1,23 @@
+name: Send Email
+
+on:
+  workflow_dispatch: # Manually triggered for now
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install SendGrid SDK
+        run: npm install @sendgrid/mail
+
+      - name: Run email script
+        run: node send-email.js
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
