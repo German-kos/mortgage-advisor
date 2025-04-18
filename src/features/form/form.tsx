@@ -2,10 +2,10 @@ import { Grid } from "@radix-ui/themes/components/grid";
 import { Form as RadixForm } from "radix-ui";
 import { Box } from "@radix-ui/themes/components/box";
 import { Button } from "@radix-ui/themes/src/index.js";
-import { CustomRadixField } from "@/features/form/components/CustomRadixField";
+import { CustomRadixField } from "@/features/form/components/custom-radix-field";
 import { isValidEmail } from "./validation";
-import { useFormState } from "./hooks/useFormState";
-import { fullNameFields } from "./formConfig";
+import { useFormState } from "./hooks/use-form-state";
+import { fullNameFields } from "./form-config";
 
 type FormProps = {
   showSubtext?: boolean;
