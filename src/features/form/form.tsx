@@ -36,6 +36,7 @@ export const Form = ({ showSubtext = true }: FormProps) => {
     const phone = formData.get("phone") as string;
     const name = `${formData.get("firstName")} ${formData.get("lastName")}`;
 
+    console.log("Form Data:", { email, phone, name });
     if (!isValidEmail(email)) {
       setShowEmailError(true);
       return;
@@ -46,8 +47,14 @@ export const Form = ({ showSubtext = true }: FormProps) => {
       return;
     }
 
+    const time = new Date().toLocaleString("he-IL", {
+      timeZone: "Asia/Jerusalem",
+      dateStyle: "short",
+      timeStyle: "short",
+    });
+
     try {
-      await sendToGitHub({ name, email, phone });
+      await sendToGitHub({ name, email, phone, time });
       setStatus("success");
       form.reset();
     } catch (err) {
