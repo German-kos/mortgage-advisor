@@ -14,11 +14,10 @@ const { name, email, phone, time } = event.client_payload;
 const msg = {
   to: "kostiakovg@outlook.com",
   from: "kostiakovg@outlook.com",
-  subject: "'ס - ${name}פנייה חדשה מאתר משכנתא!",
+  subject: `פנייה חדשה ממשכנת'ס - ${name}`,
   text: "ליד חדש מהאתר!",
   html: `
   <div dir="rtl" style="text-align: right; font-family: Arial, sans-serif;">
-    <h2'ס - ${name}פנייה חדשה מאתר משכנתא!</h2>
     <p><strong>שם מלא:</strong> ${name}</p>
     <p><strong>אימייל:</strong> ${email}</p>
     <p><strong>טלפון:</strong> ${phone}</p>
