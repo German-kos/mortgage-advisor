@@ -6,6 +6,7 @@ import { CustomRadixField } from "@/features/form/components/custom-radix-field"
 import { isValidEmail } from "./validation";
 import { useFormState } from "./hooks/use-form-state";
 import { fullNameFields } from "./form-config";
+import { sendToGitHub } from "./utils/send-to-github";
 
 type FormProps = {
   showSubtext?: boolean;
@@ -26,58 +27,90 @@ export const Form = ({ showSubtext = true }: FormProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    console.log("Form submitted");
+
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
-    if (!isValidEmail(formData.get("email") as string)) {
+    const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const name = `${formData.get("firstName")} ${formData.get("lastName")}`;
+
+    if (!isValidEmail(email)) {
       setShowEmailError(true);
       return;
-    } else {
-      setShowEmailError(false);
     }
 
     if (!isChecked) {
-      e.preventDefault(); // Prevent submission if checkbox is not checked
-      setShowError(true); // Show error message
+      setShowError(true);
       return;
     }
-    setShowError(false); // Hide error if checkbox is checked
-
-    setStatus("loading");
 
     try {
-      const ilTime = new Date().toLocaleString("he-IL", {
-        timeZone: "Asia/Jerusalem",
-        hour12: false,
-        dateStyle: "short",
-        timeStyle: "short",
-      });
-
-      const response = await fetch("https://formspree.io/f/xyzevypk", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.get("firstName") + " " + formData.get("lastName"),
-          phone: formData.get("phone"),
-          email: formData.get("email"),
-          _subject: formData.get("firstName") + " " + formData.get("lastName"),
-          message: `טופס חדש התקבל מהאתר \n ${ilTime}`,
-        }),
-      });
-
-      if (response.ok) {
-        setStatus("success");
-      } else {
-        console.error("Formspree Error:", await response.text());
-        setStatus("error");
-      }
+      await sendToGitHub({ name, email, phone });
+      setStatus("success");
+      form.reset();
     } catch (err) {
-      console.error("Network Error:", err);
+      console.error(err);
       setStatus("error");
     }
   };
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+
+  //   const form = e.target as HTMLFormElement;
+  //   const formData = new FormData(form);
+
+  //   if (!isValidEmail(formData.get("email") as string)) {
+  //     setShowEmailError(true);
+  //     return;
+  //   } else {
+  //     setShowEmailError(false);
+  //   }
+
+  //   if (!isChecked) {
+  //     e.preventDefault(); // Prevent submission if checkbox is not checked
+  //     setShowError(true); // Show error message
+  //     return;
+  //   }
+  //   setShowError(false); // Hide error if checkbox is checked
+
+  //   setStatus("loading");
+
+  //   try {
+  //     const ilTime = new Date().toLocaleString("he-IL", {
+  //       timeZone: "Asia/Jerusalem",
+  //       hour12: false,
+  //       dateStyle: "short",
+  //       timeStyle: "short",
+  //     });
+
+  //     const response = await fetch("https://formspree.io/f/xyzevypk", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         name: formData.get("firstName") + " " + formData.get("lastName"),
+  //         phone: formData.get("phone"),
+  //         email: formData.get("email"),
+  //         _subject: formData.get("firstName") + " " + formData.get("lastName"),
+  //         message: `טופס חדש התקבל מהאתר \n ${ilTime}`,
+  //       }),
+  //     });
+
+  //     if (response.ok) {
+  //       setStatus("success");
+  //     } else {
+  //       console.error("Formspree Error:", await response.text());
+  //       setStatus("error");
+  //     }
+  //   } catch (err) {
+  //     console.error("Network Error:", err);
+  //     setStatus("error");
+  //   }
+  // };
 
   return (
     <Box className="flex flex-col lg:justify-between md:gap-4 xl:gap-5 max-w-[480px] h-full">

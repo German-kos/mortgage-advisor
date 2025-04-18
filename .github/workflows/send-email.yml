@@ -1,7 +1,8 @@
 name: Send Email
 
 on:
-  workflow_dispatch: # Manually triggered for now
+  repository_dispatch:
+    types: [form-submit]
 
 jobs:
   send:
