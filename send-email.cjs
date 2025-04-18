@@ -12,8 +12,8 @@ const event = JSON.parse(raw);
 const { name, email, phone, time } = event.client_payload;
 
 const msg = {
-  to: "germaskk@gmail.com",
-  from: "kostiakovg@gmail.com",
+  to: "germaskk@outlook.com",
+  from: "kostiakovg@outlook.com",
   subject: "New Form Submission",
   text: "Someone submitted the contact form!",
   html: `
