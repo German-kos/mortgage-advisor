@@ -39,7 +39,7 @@ export const FormFeedback = () => {
                 <XCircle className="w-16 h-16 text-red-600" />
                 <p className="mt-4 font-medium text-red-600 text-3xl">
                   שגיאה בשליחה! אנא נסה שוב מאוחר יותר או צור קשר באמצעות כפתור
-                  הוואטסאפ
+                  הוואטסאפ.
                 </p>
               </>
             )}

@@ -66,8 +66,6 @@ export const Form = ({ showSubtext = true }: FormProps) => {
     }
   };
 
-  // if (status !== "idle") return <FormFeedback />;
-
   return (
     <Box className="flex flex-col lg:justify-between md:gap-4 xl:gap-5 max-w-[480px] h-full">
       <AnimatePresence mode="wait" initial={false}>
