@@ -20,25 +20,26 @@ export const FormFeedback = () => {
           <Box className="flex flex-col items-center p-6 text-center">
             {status === "loading" && (
               <>
-                <Loader2 className="w-10 h-10 text-blue-600 animate-spin" />
-                <p className="mt-4 font-medium text-blue-600 text-lg">
+                <Loader2 className="w-16 h-16 text-blue-600 animate-spin" />
+                <p className="mt-4 font-medium text-blue-600 text-3xl">
                   שולח את הבקשה שלך...
                 </p>
               </>
             )}
             {status === "success" && (
               <>
-                <CheckCircle2 className="w-10 h-10 text-green-600" />
-                <p className="mt-4 font-medium text-green-600 text-lg">
+                <CheckCircle2 className="w-16 h-16 text-green-600" />
+                <p className="mt-4 font-medium text-green-600 text-3xl">
                   נשלח בהצלחה! נחזור אליך בהקדם.
                 </p>
               </>
             )}
             {status === "error" && (
               <>
-                <XCircle className="w-10 h-10 text-red-600" />
-                <p className="mt-4 font-medium text-red-600 text-lg">
-                  שגיאה בשליחה. נסה שוב בעוד רגע.
+                <XCircle className="w-16 h-16 text-red-600" />
+                <p className="mt-4 font-medium text-red-600 text-3xl">
+                  שגיאה בשליחה! אנא נסה שוב מאוחר יותר או צור קשר באמצעות כפתור
+                  הוואטסאפ
                 </p>
               </>
             )}
