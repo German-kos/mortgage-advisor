@@ -71,6 +71,7 @@ export const Form = ({ showSubtext = true }: FormProps) => {
       <AnimatePresence mode="wait" initial={false}>
         {status === "idle" && (
           <motion.div
+            className="flex flex-col lg:justify-between md:gap-4 xl:gap-5 max-w-[480px] h-full"
             key="form"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
