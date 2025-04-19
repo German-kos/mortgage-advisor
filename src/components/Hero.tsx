@@ -5,21 +5,31 @@ import { CustomBox } from "./CustomBox";
 import { useEffect, useRef, useState } from "react";
 import { Modal } from "./Modal";
 import { scroller } from "react-scroll";
+import { useFormStatus } from "@/features/form/context/form-status-context";
 
 export const Hero = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const hasOpened = useRef(false);
+  const { status } = useFormStatus();
+  const statusRef = useRef(status);
+
+  useEffect(() => {
+    statusRef.current = status;
+  }, [status]);
 
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
-
     if (isMobile) return;
 
     const handleScroll = () => {
       const reachedBottom =
         window.innerHeight + window.scrollY >= document.body.offsetHeight - 50;
 
-      if (reachedBottom && !hasOpened.current) {
+      if (
+        reachedBottom &&
+        !hasOpened.current &&
+        statusRef.current !== "success"
+      ) {
         setModalOpen(true);
         hasOpened.current = true;
       }
