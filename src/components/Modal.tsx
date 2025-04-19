@@ -31,7 +31,7 @@ export const Modal = ({ open, onClose }: CustomModalProps) => {
         />
 
         <Dialog.Content
-          className={`modal-content ${
+          className={`min-h-[500px] justify-center  modal-content ${
             open ? "slide-up" : "slide-down"
           } flex flex-col items-center text-center`}
           onPointerDown={(e) => e.stopPropagation()}
