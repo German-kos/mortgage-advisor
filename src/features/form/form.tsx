@@ -8,7 +8,6 @@ import { useFormState } from "./hooks/use-form-state";
 import { fullNameFields } from "./form-config";
 import { parseForm } from "./utils/parse-form";
 import { sendForm } from "./utils/send-form";
-// import { sendToGitHub } from "./utils/send-to-github";
 import { useFormStatus } from "@/features/form/context/form-status-context";
 import { FormFeedback } from "./components/form-feedback";
 import { AnimatePresence, motion } from "framer-motion";
