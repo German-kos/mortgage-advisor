@@ -29,8 +29,6 @@ export const Form = ({ showSubtext = true }: FormProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    setStatus("loading");
-
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
@@ -48,6 +46,8 @@ export const Form = ({ showSubtext = true }: FormProps) => {
       setShowError(true);
       return;
     }
+
+    setStatus("loading");
 
     const time = new Date().toLocaleString("he-IL", {
       timeZone: "Asia/Jerusalem",
@@ -67,7 +67,7 @@ export const Form = ({ showSubtext = true }: FormProps) => {
   };
 
   return (
-    <Box className="flex flex-col lg:justify-between md:gap-4 xl:gap-5 max-w-[480px] h-full">
+    <Box className="flex flex-col lg:justify-center md:gap-4 xl:gap-5 max-w-[480px] h-full min-h-[465px]">
       <AnimatePresence mode="wait" initial={false}>
         {status === "idle" && (
           <motion.div
