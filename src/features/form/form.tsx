@@ -6,7 +6,9 @@ import { CustomRadixField } from "@/features/form/components/custom-radix-field"
 import { isValidEmail } from "./validation";
 import { useFormState } from "./hooks/use-form-state";
 import { fullNameFields } from "./form-config";
-import { sendToGitHub } from "./utils/send-to-github";
+import { parseForm } from "./utils/parse-form";
+import { sendForm } from "./utils/send-form";
+// import { sendToGitHub } from "./utils/send-to-github";
 import { useFormStatus } from "@/features/form/context/form-status-context";
 import { FormFeedback } from "./components/form-feedback";
 import { AnimatePresence, motion } from "framer-motion";
@@ -26,18 +28,13 @@ export const Form = ({ showSubtext = true }: FormProps) => {
 
   const { status, setStatus } = useFormStatus();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const form = e.target as HTMLFormElement;
-    const formData = new FormData(form);
+    const data = parseForm(form);
 
-    const email = formData.get("email") as string;
-    const phone = formData.get("phone") as string;
-    const name = `${formData.get("firstName")} ${formData.get("lastName")}`;
-
-    console.log("Form Data:", { email, phone, name });
-    if (!isValidEmail(email)) {
+    if (!isValidEmail(data.email)) {
       setShowEmailError(true);
       return;
     }
@@ -49,15 +46,9 @@ export const Form = ({ showSubtext = true }: FormProps) => {
 
     setStatus("loading");
 
-    const time = new Date().toLocaleString("he-IL", {
-      timeZone: "Asia/Jerusalem",
-      dateStyle: "short",
-      timeStyle: "short",
-    });
-
     try {
-      await sendToGitHub({ name, email, phone, time });
-      await new Promise((res) => setTimeout(res, 500));
+      await sendForm(data);
+      await new Promise((res) => setTimeout(res, 500)); // optional delay
       setStatus("success");
       form.reset();
     } catch (err) {
@@ -65,6 +56,46 @@ export const Form = ({ showSubtext = true }: FormProps) => {
       setStatus("error");
     }
   };
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+
+  //   const form = e.target as HTMLFormElement;
+  //   const formData = new FormData(form);
+
+  //   const email = formData.get("email") as string;
+  //   const phone = formData.get("phone") as string;
+  //   const name = `${formData.get("firstName")} ${formData.get("lastName")}`;
+
+  //   console.log("Form Data:", { email, phone, name });
+  //   if (!isValidEmail(email)) {
+  //     setShowEmailError(true);
+  //     return;
+  //   }
+
+  //   if (!isChecked) {
+  //     setShowError(true);
+  //     return;
+  //   }
+
+  //   setStatus("loading");
+
+  //   const time = new Date().toLocaleString("he-IL", {
+  //     timeZone: "Asia/Jerusalem",
+  //     dateStyle: "short",
+  //     timeStyle: "short",
+  //   });
+
+  //   try {
+  //     await sendToGitHub({ name, email, phone, time });
+  //     await new Promise((res) => setTimeout(res, 500));
+  //     setStatus("success");
+  //     form.reset();
+  //   } catch (err) {
+  //     console.error(err);
+  //     setStatus("error");
+  //   }
+  // };
 
   return (
     <Box className="flex flex-col lg:justify-center md:gap-4 xl:gap-5 max-w-[480px] h-full min-h-[465px]">
