@@ -142,20 +142,19 @@ export const Form = ({ showSubtext = true }: FormProps) => {
                       }}
                       className="border border-[#D0D5DD] rounded w-5 h-5 cursor-pointer"
                     />
-                    <label
-                      className="font-normal text-base text-right leading-none"
+                    <motion.label
                       htmlFor="c1"
+                      className={`font-normal text-base text-right leading-none transition-colors ${
+                        showError ? "text-red-500" : "text-[#101828]"
+                      }`}
+                      animate={
+                        showError ? { x: [0, -6, 6, -4, 4, 0] } : { x: 0 }
+                      }
+                      transition={{ duration: 0.4 }}
                     >
                       אתה מסכים למדיניות הפרטיות הידידותית שלנו.
-                    </label>
+                    </motion.label>
                   </div>
-
-                  {/* Error Message */}
-                  {showError && (
-                    <p className="mt-1 text-red-500 text-sm">
-                      יש לאשר את התנאים לפני שליחת הטופס.
-                    </p>
-                  )}
                 </Grid>
 
                 {/* Submit Button */}
