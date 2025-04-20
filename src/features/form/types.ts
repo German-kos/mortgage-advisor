@@ -1,3 +1,7 @@
+export type FormProps = {
+  showSubtext?: boolean;
+};
+
 export type FormData = {
   name: string;
   email: string;
@@ -6,3 +10,9 @@ export type FormData = {
 };
 
 export type FormStatus = "idle" | "loading" | "success" | "error";
+
+export type FieldConfig = {
+  name: string;
+  label: string;
+  type: string;
+};

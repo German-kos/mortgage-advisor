@@ -11,11 +11,9 @@ import { sendForm } from "./utils/send-form";
 import { useFormStatus } from "@/features/form/context/form-status-context";
 import { FormFeedback } from "./components/form-feedback";
 import { AnimatePresence, motion } from "framer-motion";
-type FormProps = {
-  showSubtext?: boolean;
-};
+import { FormProps } from "./types";
 
-export const Form = ({ showSubtext = true }: FormProps) => {
+const Form = ({ showSubtext = true }: FormProps) => {
   const {
     isChecked,
     setIsChecked,
@@ -47,7 +45,7 @@ export const Form = ({ showSubtext = true }: FormProps) => {
 
     try {
       await sendForm(data);
-      await new Promise((res) => setTimeout(res, 500)); // optional delay
+      await new Promise((res) => setTimeout(res, 500)); // simulated delay
       setStatus("success");
       form.reset();
     } catch (err) {
@@ -55,46 +53,6 @@ export const Form = ({ showSubtext = true }: FormProps) => {
       setStatus("error");
     }
   };
-
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   const form = e.target as HTMLFormElement;
-  //   const formData = new FormData(form);
-
-  //   const email = formData.get("email") as string;
-  //   const phone = formData.get("phone") as string;
-  //   const name = `${formData.get("firstName")} ${formData.get("lastName")}`;
-
-  //   console.log("Form Data:", { email, phone, name });
-  //   if (!isValidEmail(email)) {
-  //     setShowEmailError(true);
-  //     return;
-  //   }
-
-  //   if (!isChecked) {
-  //     setShowError(true);
-  //     return;
-  //   }
-
-  //   setStatus("loading");
-
-  //   const time = new Date().toLocaleString("he-IL", {
-  //     timeZone: "Asia/Jerusalem",
-  //     dateStyle: "short",
-  //     timeStyle: "short",
-  //   });
-
-  //   try {
-  //     await sendToGitHub({ name, email, phone, time });
-  //     await new Promise((res) => setTimeout(res, 500));
-  //     setStatus("success");
-  //     form.reset();
-  //   } catch (err) {
-  //     console.error(err);
-  //     setStatus("error");
-  //   }
-  // };
 
   return (
     <Box className="flex flex-col lg:justify-center md:gap-4 xl:gap-5 max-w-[480px] h-full min-h-[465px]">
@@ -213,3 +171,5 @@ export const Form = ({ showSubtext = true }: FormProps) => {
     </Box>
   );
 };
+
+export default Form;
