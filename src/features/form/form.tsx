@@ -5,7 +5,7 @@ import { Button } from "@radix-ui/themes/src/index.js";
 import { CustomRadixField } from "@/features/form/components/custom-radix-field";
 import { isValidEmail } from "./validation";
 import { useFormState } from "./hooks/use-form-state";
-import { fullNameFields } from "./form-config";
+import { fullNameFields } from "./constants";
 import { parseForm } from "./utils/parse-form";
 import { sendForm } from "./utils/send-form";
 import { useFormStatus } from "@/features/form/context/form-status-context";

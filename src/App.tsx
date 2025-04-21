@@ -1,11 +1,11 @@
 import { About } from "./components/About";
 import { Features } from "./components/Features";
-import { FormSection } from "./components/FormSection";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 // import { Testimonials } from "./components/Testimonials";
 import { WhatsappButton } from "./components/WhatsappButton";
 import { Footer } from "./features/footer";
+import { FormSection } from "./features/form";
 import { FormStatusProvider } from "./features/form/context/form-status-context";
 
 function App() {
