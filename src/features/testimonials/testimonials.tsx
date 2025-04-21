@@ -1,8 +1,8 @@
-import { Carousel } from "./Carousel";
-import { CustomBox } from "./CustomBox";
-import { CustomContainer } from "./CustomContainer";
+import { CustomBox } from "@/components/CustomBox";
+import { CustomContainer } from "@/components/CustomContainer";
+import { TestimonialCarousel } from "./components/testimonial-carousel";
 
-export const Testimonials = () => {
+const Testimonials = () => {
   return (
     <CustomBox
       id="testimonials"
@@ -16,7 +16,10 @@ export const Testimonials = () => {
           </h2>
         </div>
       </CustomContainer>
-      <Carousel />
+
+      <TestimonialCarousel />
     </CustomBox>
   );
 };
+
+export default Testimonials;

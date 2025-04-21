@@ -1,9 +1,10 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { Star, StarIcon } from "lucide-react";
+import { testimonials } from "../constants";
 
-export const Carousel: React.FC = () => {
+export const TestimonialCarousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     direction: "rtl",
@@ -33,73 +34,6 @@ export const Carousel: React.FC = () => {
     emblaApi.on("select", onSelect);
     onSelect();
   }, [emblaApi, onSelect]);
-
-  const testimonials = [
-    {
-      name: "קורטני הנרי",
-      job: "נשיא מכירות",
-      reply:
-        "תמיכה מדהימה! הם טיפלו בכל הניירת והמשא ומתן, מה שהפך את תהליך המשכנתא שלי לחלק וללא לחץ.",
-      rating: 3,
-      picture: "/images/testimonials/pic_1.png",
-    },
-    {
-      name: "רונלד ריצ'רדס",
-      job: "מאלף כלבים",
-      reply:
-        "הייתי אבוד לגמרי עם אפשרויות המשכנתא, אבל הייעוץ המומחה שלהם הפך הכול לפשוט. בזכותם, אני עכשיו בעל בית חלומותיי!",
-      rating: 4,
-      picture: "/images/testimonials/pic_2.png",
-    },
-    {
-      name: "ברוקלין סימונס",
-      job: "מעצב אתרים",
-      reply:
-        "מקצועיים ואמינים! קיבלתי ריבית נמוכה ואישור מהיר בזכות הייעוץ המומחה שלהם.",
-      rating: 4,
-      picture: "/images/testimonials/pic_3.png",
-    },
-    {
-      name: "מרווין מקיני",
-      job: "עוזר סיעודי",
-      reply:
-        "ממליץ בחום! הם עזרו לי להשיג את הריבית הנמוכה ביותר, והתהליך היה חלק וללא לחץ.",
-      rating: 5,
-      picture: "/images/testimonials/pic_4.png",
-    },
-    {
-      name: "תוספת 1",
-      job: "נשיא מכירות",
-      reply:
-        "תמיכה מדהימה! הם טיפלו בכל הניירת והמשא ומתן, מה שהפך את תהליך המשכנתא שלי לחלק וללא לחץ.",
-      rating: 4,
-      picture: "/images/testimonials/pic_1.png",
-    },
-    {
-      name: "תוספת 2",
-      job: "מאלף כלבים",
-      reply:
-        "הייתי אבוד לגמרי עם אפשרויות המשכנתא, אבל הייעוץ המומחה שלהם הפך הכול לפשוט. בזכותם, אני עכשיו בעל בית חלומותיי!",
-      rating: 4,
-      picture: "/images/testimonials/pic_2.png",
-    },
-    {
-      name: "תוספת 3",
-      job: "מעצב אתרים",
-      reply:
-        "מקצועיים ואמינים! קיבלתי ריבית נמוכה ואישור מהיר בזכות הייעוץ המומחה שלהם.",
-      rating: 4,
-      picture: "/images/testimonials/pic_3.png",
-    },
-    {
-      name: "תוספת 4",
-      job: "עוזר סיעודי",
-      reply:
-        "ממליץ בחום! הם עזרו לי להשיג את הריבית הנמוכה ביותר, והתהליך היה חלק וללא לחץ.",
-      rating: 4,
-      picture: "/images/testimonials/pic_4.png",
-    },
-  ];
 
   return (
     <div className="relative w-full overflow-hidden">
@@ -155,7 +89,7 @@ export const Carousel: React.FC = () => {
       <div className="flex justify-center mt-6 px-4 w-full">
         <div className="flex justify-between items-center mx-6 w-full max-w-[1280px]">
           {/* Arrows */}
-          <div className="flex gap-4">
+          <div className="flex gap-4 pb-1">
             <button
               className="bg-white shadow p-2 rounded-full"
               onClick={scrollPrev}

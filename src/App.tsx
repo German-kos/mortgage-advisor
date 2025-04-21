@@ -1,12 +1,12 @@
 import { Features } from "./components/Features";
 import { Hero } from "./components/Hero";
-// import { Testimonials } from "./components/Testimonials";
 import { WhatsappButton } from "./components/WhatsappButton";
 import { About } from "./features/about";
 import { Footer } from "./features/footer";
 import { FormSection } from "./features/form";
 import { FormStatusProvider } from "./features/form/context/form-status-context";
 import { Navbar } from "./features/navbar";
+import { Testimonials } from "./features/testimonials";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <Features />
         <FormSection />
         <About />
-        {/* <Testimonials /> */}
+        <Testimonials />
         <Footer />
         <WhatsappButton />
       </FormStatusProvider>
