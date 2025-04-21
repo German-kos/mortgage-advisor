@@ -1,16 +1,19 @@
-export const checkmarkImage = {
+import { ImageMeta } from "@/types";
+import { CheckmarkItems } from "./types";
+
+export const checkmarkImage: ImageMeta = {
   src: "/images/icons/Check.png",
   alt: "Check",
   className: "w-6 h-6",
 };
 
-export const aboutImage = {
+export const aboutImage: ImageMeta = {
   src: "/images/About.png",
   alt: "About Image",
   className: "pb-10 sm:pb-0 w-full max-w-[576px] h-auto object-contain",
 };
 
-export const checkItems = [
+export const checkmarkItems: CheckmarkItems[] = [
   "בניית תמהיל שמתאים לכם, לא לבנק.",
   "חיסכון אמיתי – גם בכסף וגם בעצבים.",
   "ליווי אישי לאורך כל הדרך.",

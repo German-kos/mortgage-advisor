@@ -1,4 +1,6 @@
-export const socials = [
+import { ContactBlock, FooterLink, SocialLink } from "./types";
+
+export const socials: SocialLink[] = [
   {
     name: "Facebook",
     link: "https://www.facebook.com/eliran.shlomov",
@@ -17,7 +19,7 @@ export const socials = [
   },
 ];
 
-export const contact = [
+export const contact: ContactBlock[] = [
   {
     img: "Loc",
     title: "כתובת",
@@ -35,7 +37,7 @@ export const contact = [
   },
 ];
 
-export const links = [
+export const links: FooterLink[] = [
   { name: "עוגיות", link: "#" },
   { name: "פרטיות", link: "#" },
   { name: "תנאים", link: "#" },

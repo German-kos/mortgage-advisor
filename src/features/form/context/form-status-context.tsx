@@ -1,10 +1,9 @@
+import { Status } from "@/types";
 import { createContext, useContext, useState } from "react";
 
-type FormStatus = "idle" | "loading" | "success" | "error";
-
 const FormStatusContext = createContext<{
-  status: FormStatus;
-  setStatus: React.Dispatch<React.SetStateAction<FormStatus>>;
+  status: Status;
+  setStatus: React.Dispatch<React.SetStateAction<Status>>;
 } | null>(null);
 
 export const FormStatusProvider = ({
@@ -12,7 +11,7 @@ export const FormStatusProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [status, setStatus] = useState<FormStatus>("idle");
+  const [status, setStatus] = useState<Status>("idle");
   return (
     <FormStatusContext.Provider value={{ status, setStatus }}>
       {children}

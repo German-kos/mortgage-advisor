@@ -2,7 +2,7 @@ import { PrimaryButton } from "@/components/PrimaryButton";
 import { Box } from "@radix-ui/themes/components/box";
 import { Grid } from "@radix-ui/themes/components/grid";
 import { Link } from "react-scroll";
-import { checkItems, checkmarkImage } from "../constants";
+import { checkmarkItems, checkmarkImage } from "../constants";
 
 export const AboutContent = () => {
   return (
@@ -23,7 +23,7 @@ export const AboutContent = () => {
         </div>
 
         <div className="justify-center lg:justify-start gap-5 grid w-full">
-          {checkItems.map((item, index) => (
+          {checkmarkItems.map((item, index) => (
             <div
               className="flex items-center gap-3 w-full max-w-[300px] text-right"
               key={index}

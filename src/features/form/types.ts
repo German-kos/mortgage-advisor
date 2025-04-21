@@ -9,8 +9,6 @@ export type FormData = {
   time: string;
 };
 
-export type FormStatus = "idle" | "loading" | "success" | "error";
-
 export type FieldConfig = {
   name: string;
   label: string;
