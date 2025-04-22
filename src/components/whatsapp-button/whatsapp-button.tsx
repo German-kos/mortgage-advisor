@@ -1,9 +1,10 @@
 import { Link } from "@radix-ui/themes/src/index.js";
-import "./WhatsappButton.css"; // Import the CSS file
+import "./whatsapp-button.css"; // Import the CSS file
 
-export const WhatsappButton = () => {
+const WhatsappButton = () => {
   return (
-    <div className="right-2 md:right-4 lg:right-6 bottom-2 md:bottom-4 lg:bottom-6 z-[999] fixed">
+    // <div className="right-2 md:right-4 lg:right-6 bottom-2 md:bottom-4 lg:bottom-6 z-[999] fixed">
+    <div className="whatsapp-button">
       {/* Pulsing Background */}
       <div className="whatsapp-pulse"></div>
 
@@ -22,3 +23,5 @@ export const WhatsappButton = () => {
     </div>
   );
 };
+
+export default WhatsappButton;

@@ -1,5 +1,4 @@
-// import { Hero } from "./components/Hero";
-import { WhatsappButton } from "./components/WhatsappButton";
+import { WhatsappButton } from "./components/whatsapp-button";
 import { About } from "./features/about";
 import { Footer } from "./features/footer";
 import { FormSection } from "./features/form";
