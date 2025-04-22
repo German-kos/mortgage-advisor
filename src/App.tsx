@@ -1,9 +1,10 @@
-import { Hero } from "./components/Hero";
+// import { Hero } from "./components/Hero";
 import { WhatsappButton } from "./components/WhatsappButton";
 import { About } from "./features/about";
 import { Footer } from "./features/footer";
 import { FormSection } from "./features/form";
 import { FormStatusProvider } from "./features/form/context/form-status-context";
+import { Hero } from "./features/hero";
 import { Highlights } from "./features/highlights";
 import { Navbar } from "./features/navbar";
 import { Testimonials } from "./features/testimonials";
