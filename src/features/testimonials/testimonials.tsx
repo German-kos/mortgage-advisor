@@ -1,6 +1,5 @@
-import { CustomBox } from "@/components/custom-box";
-import { CustomContainer } from "@/components/custom-container";
-import { TestimonialCarousel } from "./components/testimonial-carousel";
+import { CustomBox, CustomContainer } from "@/components";
+import { TestimonialCarousel } from "./components";
 
 const Testimonials = () => {
   return (
