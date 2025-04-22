@@ -1,6 +1,6 @@
-import { CustomBox } from "@/components/CustomBox";
-import { CustomContainer } from "@/components/CustomContainer";
-import { Logo } from "@/components/Logo";
+import { CustomBox } from "@/components/custom-box";
+import { CustomContainer } from "@/components/custom-container";
+import { Logo } from "@/components/logo";
 import { Grid } from "@radix-ui/themes/components/grid";
 import { FooterSocials } from "./components/footer-socials";
 import { FooterContact } from "./components/footer-contact";

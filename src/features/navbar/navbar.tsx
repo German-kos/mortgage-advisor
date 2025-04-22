@@ -1,7 +1,7 @@
-import { CustomBox } from "@/components/CustomBox";
-import { CustomContainer } from "@/components/CustomContainer";
+import { CustomBox } from "@/components/custom-box";
+import { CustomContainer } from "@/components/custom-container";
 import { Grid } from "@radix-ui/themes/components/grid";
-import { Logo } from "@/components/Logo";
+import { Logo } from "@/components/logo";
 import { NavLinks } from "./components/nav-links";
 import { NavCTA } from "./components/nav-cta";
 

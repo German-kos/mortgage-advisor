@@ -1,4 +1,4 @@
-import { PrimaryButton } from "@/components/PrimaryButton";
+import { PrimaryButton } from "@/components/primary-button";
 import { Box } from "@radix-ui/themes/components/box";
 import { Grid } from "@radix-ui/themes/components/grid";
 import { Link } from "react-scroll";

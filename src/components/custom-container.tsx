@@ -1,6 +1,6 @@
 import { Container } from "@radix-ui/themes/components/container";
 
-export const CustomContainer: React.FC<{ children: React.ReactNode }> = ({
+const CustomContainer: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   return (
@@ -9,3 +9,5 @@ export const CustomContainer: React.FC<{ children: React.ReactNode }> = ({
     </Container>
   );
 };
+
+export default CustomContainer;

@@ -1,4 +1,4 @@
-import { PrimaryButton } from "@/components/PrimaryButton";
+import { PrimaryButton } from "@/components/primary-button";
 import { heroContent } from "../constants";
 
 export const HeroText = ({ onCTAClick }: { onCTAClick: () => void }) => {

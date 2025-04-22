@@ -4,11 +4,7 @@ interface CustomBoxProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
 }
 
-export const CustomBox = ({
-  className,
-  children,
-  ...props
-}: CustomBoxProps) => {
+const CustomBox = ({ className, children, ...props }: CustomBoxProps) => {
   return (
     <div
       className={cn("flex justify-center bg-transparent w-full", className)}
@@ -18,3 +14,5 @@ export const CustomBox = ({
     </div>
   );
 };
+
+export default CustomBox;

@@ -1,7 +1,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import { useState, useEffect } from "react";
-import "./Modal.css"; // Import the CSS file
+import "./modal.css"; // Import the CSS file
 import { Form } from "@/features/form";
 
 interface CustomModalProps {
@@ -9,7 +9,7 @@ interface CustomModalProps {
   onClose: () => void;
 }
 
-export const Modal = ({ open, onClose }: CustomModalProps) => {
+const Modal = ({ open, onClose }: CustomModalProps) => {
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
@@ -55,3 +55,5 @@ export const Modal = ({ open, onClose }: CustomModalProps) => {
     </Dialog.Root>
   );
 };
+
+export default Modal;

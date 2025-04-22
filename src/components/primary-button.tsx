@@ -5,7 +5,7 @@ interface PrimaryButtonProps {
   onClick?: () => void;
 }
 
-export const PrimaryButton = ({ text, onClick }: PrimaryButtonProps) => {
+const PrimaryButton = ({ text, onClick }: PrimaryButtonProps) => {
   return (
     <Button
       onClick={onClick}
@@ -15,3 +15,5 @@ export const PrimaryButton = ({ text, onClick }: PrimaryButtonProps) => {
     </Button>
   );
 };
+
+export default PrimaryButton;

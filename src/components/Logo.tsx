@@ -4,7 +4,7 @@ interface LogoProps {
   className?: string;
 }
 
-export const Logo = ({ className }: LogoProps) => {
+const Logo = ({ className }: LogoProps) => {
   return (
     <div className="flex items-center gap-2 sm:gap-3">
       <img src="/images/Logo.png" alt="logo" className="h-8 sm:h-10" />
@@ -19,3 +19,5 @@ export const Logo = ({ className }: LogoProps) => {
     </div>
   );
 };
+
+export default Logo;
