@@ -5,7 +5,7 @@ import {
   Highlights,
   FormSection,
   About,
-  Testimonials,
+  // Testimonials, //uncomment when testimonials are ready
   Footer,
 } from "./features";
 import { FormStatusProvider } from "./features/form/context";
@@ -21,7 +21,7 @@ function App() {
         <Highlights />
         <FormSection />
         <About />
-        <Testimonials />
+        {/* <Testimonials /> */} {/*uncomment when testimonials are ready */}
         <Footer />
         <WhatsappButton />
       </FormStatusProvider>
