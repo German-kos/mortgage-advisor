@@ -1,9 +1,6 @@
-import { CustomBox } from "@/components/custom-box";
-import { CustomContainer } from "@/components/custom-container";
 import { Grid } from "@radix-ui/themes/components/grid";
-import { Logo } from "@/components/logo";
-import { NavLinks } from "./components/nav-links";
-import { NavCTA } from "./components/nav-cta";
+import { CustomBox, CustomContainer, Logo } from "@/components";
+import { NavLinks, NavCTA } from "./components";
 
 const Navbar = () => {
   return (

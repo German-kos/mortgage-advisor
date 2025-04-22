@@ -1,8 +1,7 @@
-import { CustomBox } from "@/components/custom-box";
-import { CustomContainer } from "@/components/custom-container";
 import { Grid } from "@radix-ui/themes/components/grid";
 import { HighlightCard } from "./components/highlight-card";
 import { highlightList } from "./constants";
+import { CustomBox, CustomContainer } from "@/components";
 
 const Highlights = () => (
   <CustomBox id="features" className="bg-[#F9FAFB] py-8 sm:py-16">

@@ -1,8 +1,8 @@
-import { PrimaryButton } from "@/components/primary-button";
 import { Box } from "@radix-ui/themes/components/box";
 import { Grid } from "@radix-ui/themes/components/grid";
 import { Link } from "react-scroll";
 import { checkmarkItems, checkmarkImage } from "../constants";
+import { PrimaryButton } from "@/components";
 
 export const AboutContent = () => {
   return (

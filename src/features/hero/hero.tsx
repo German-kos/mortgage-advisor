@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Grid } from "@radix-ui/themes/components/grid";
 import { scroller } from "react-scroll";
-import { useFormStatus } from "@/features/form/context/form-status-context";
-import { useScrollTrigger } from "./hooks/use-scroll-trigger";
 import { CustomBox, CustomContainer, Modal } from "@/components";
 import { HeroImage, HeroText } from "./components";
+import { useScrollTrigger } from "./hooks";
+import { useFormStatus } from "../form/context";
 
 const Hero = () => {
   const [modalOpen, setModalOpen] = useState(false);

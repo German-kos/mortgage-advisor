@@ -1,7 +1,7 @@
-import { useFormStatus } from "@/features/form/context/form-status-context";
 import { motion, AnimatePresence } from "framer-motion";
 import { Loader2, CheckCircle2, XCircle } from "lucide-react";
 import { Box } from "@radix-ui/themes";
+import { useFormStatus } from "../context";
 
 export const FormFeedback = () => {
   const { status } = useFormStatus();

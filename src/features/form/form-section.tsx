@@ -1,7 +1,6 @@
 import { Grid } from "@radix-ui/themes/components/grid";
 import { Form } from "@/features/form";
-import { CustomBox } from "@/components/custom-box";
-import { CustomContainer } from "@/components/custom-container";
+import { CustomBox, CustomContainer } from "@/components";
 import { formImage } from "./constants";
 
 const FormSection = () => {

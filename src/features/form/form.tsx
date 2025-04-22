@@ -2,16 +2,14 @@ import { Grid } from "@radix-ui/themes/components/grid";
 import { Form as RadixForm } from "radix-ui";
 import { Box } from "@radix-ui/themes/components/box";
 import { Button } from "@radix-ui/themes/src/index.js";
-import { CustomRadixField } from "@/features/form/components/custom-radix-field";
-import { isValidEmail } from "./validation";
-import { useFormState } from "./hooks/use-form-state";
-import { fullNameFields } from "./constants";
-import { parseForm } from "./utils/parse-form";
-import { sendForm } from "./utils/send-form";
-import { useFormStatus } from "@/features/form/context/form-status-context";
-import { FormFeedback } from "./components/form-feedback";
 import { AnimatePresence, motion } from "framer-motion";
 import { FormProps } from "./types";
+import { useFormState } from "./hooks";
+import { useFormStatus } from "./context";
+import { parseForm, sendForm } from "./utils";
+import { isValidEmail } from "./validation";
+import { fullNameFields } from "./constants";
+import { CustomRadixField, FormFeedback } from "./components";
 
 const Form = ({ showSubtext = true }: FormProps) => {
   const {

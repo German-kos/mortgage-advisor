@@ -9,7 +9,6 @@ export const NavLinks = () => (
         to={link.ref}
         smooth
         duration={500}
-        // offset={-100}
         className="font-semibold text-[#475467] hover:text-blue-600 text-base transition cursor-pointer"
       >
         {link.title}

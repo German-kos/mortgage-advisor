@@ -1,10 +1,6 @@
-import { CustomBox } from "@/components/custom-box";
-import { CustomContainer } from "@/components/custom-container";
-import { Logo } from "@/components/logo";
 import { Grid } from "@radix-ui/themes/components/grid";
-import { FooterSocials } from "./components/footer-socials";
-import { FooterContact } from "./components/footer-contact";
-import { FooterLegal } from "./components/footer-legal";
+import { CustomBox, CustomContainer, Logo } from "@/components";
+import { FooterContact, FooterLegal, FooterSocials } from "./components";
 
 const Footer = () => {
   return (

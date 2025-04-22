@@ -1,4 +1,4 @@
-import { PrimaryButton } from "@/components/primary-button";
+import { PrimaryButton } from "@/components";
 import { Link } from "@radix-ui/themes";
 
 export const NavCTA = () => (

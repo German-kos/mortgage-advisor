@@ -1,8 +1,7 @@
-import { CustomBox } from "@/components/custom-box";
-import { CustomContainer } from "@/components/custom-container";
 import { Grid } from "@radix-ui/themes/components/grid";
-import { AboutContent } from "./components/about-content";
+import { AboutContent } from "./components";
 import { aboutImage } from "./constants";
+import { CustomBox, CustomContainer } from "@/components";
 
 const About = () => {
   return (
