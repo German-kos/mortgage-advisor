@@ -9,7 +9,7 @@ export const checkmarkImage: ImageMeta = {
 
 export const aboutImage: ImageMeta = {
   src: "/images/About.png",
-  alt: "About Image",
+  alt: "תמונה של אלירן שלומוב",
   className: "pb-10 sm:pb-0 w-full max-w-[576px] h-auto object-contain",
 };
 

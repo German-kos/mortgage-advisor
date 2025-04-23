@@ -9,7 +9,7 @@ const About = () => {
       <CustomContainer>
         <Grid className="sm:justify-center min-lg:gap-16 sm:grid grid-cols-1 lg:grid-cols-2 grid-rows-2 lg:grid-rows-1 text-center lg:text-right">
           <div className="flex justify-center order-[-1] lg:order-1 w-full">
-            <img {...aboutImage} loading="lazy" />
+            <img {...aboutImage} alt={aboutImage.alt} loading="lazy" />
           </div>
 
           <AboutContent />

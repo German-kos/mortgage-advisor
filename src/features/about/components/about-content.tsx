@@ -28,7 +28,7 @@ export const AboutContent = () => {
               className="flex items-center gap-3 w-full max-w-[300px] text-right"
               key={index}
             >
-              <img {...checkmarkImage} />
+              <img {...checkmarkImage} alt={checkmarkImage.alt} />
               <p className="font-medium text-[#2C3E50] text-lg leading-none">
                 {item}
               </p>

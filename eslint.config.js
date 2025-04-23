@@ -24,7 +24,9 @@ export default tseslint.config(
       ...jsxA11y.configs.recommended.rules, // a11y linter
       "react-refresh/only-export-components": [
         "warn",
-        { allowConstantExport: true, allowObjectTypes: true },
+        {
+          allowConstantExport: true,
+        },
       ],
     },
   }

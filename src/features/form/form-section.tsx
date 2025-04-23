@@ -9,7 +9,7 @@ const FormSection = () => {
       <CustomContainer>
         <Grid className="gap-8 md:gap-16 grid lg:grid-cols-2 text-center lg:text-right">
           <div className="hidden md:flex justify-center sm:items-center sm:h-auto sm:max-h-none">
-            <img {...formImage} loading="lazy" />
+            <img {...formImage} alt={formImage.alt} loading="lazy" />
           </div>
 
           <div className="flex justify-center sm:h-auto sm:max-h-none">
