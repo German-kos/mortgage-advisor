@@ -177,3 +177,106 @@ html,
 body {
   scroll-behavior: smooth !important;
 }
+
+/* 🔥 Accessibility Global Classes */
+
+/* Contrast mode styles */
+body.contrast-mode {
+  background-color: black !important;
+  color: white !important;
+}
+
+body.contrast-mode * {
+  background-color: transparent !important; /* Clear overrides */
+  color: white !important;
+  border-color: white !important;
+}
+
+/* Font size adjustments */
+body.font-small {
+  font-size: 0.875rem; /* Tailwind text-sm */
+}
+
+body.font-normal {
+  font-size: 1rem; /* Tailwind text-base */
+}
+
+body.font-large {
+  font-size: 2rem; /* Tailwind text-lg */
+}
+
+/* Propagate font size scaling */
+body.font-small *,
+body.font-large * {
+  font-size: inherit !important; /* Ensure children inherit body size */
+}
+
+body.font-large h1,
+body.font-large h2,
+body.font-large h3 {
+  font-size: 5rem !important;
+}
+
+/* Hide focus outlines if disabled */
+body.focus-hidden *:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Prevent global styles inside the accessibility panel */
+
+.accessibility-panel {
+  all: unset;
+  position: fixed;
+  bottom: 5rem;
+  right: 1rem;
+  background: white !important;
+  color: black !important;
+  font-size: 1rem !important;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.accessibility-panel {
+  background-color: white !important;
+  color: black !important;
+  font-size: 1rem !important;
+}
+
+/* Keep panel safe from global contrast + font scaling */
+.accessibility-panel {
+  background-color: white !important;
+  color: black !important;
+  font-size: 1rem !important;
+}
+
+/* Keep panel safe from global contrast + font scaling */
+.accessibility-panel {
+  background-color: white !important;
+  color: black !important;
+  font-size: 1rem !important;
+}
+
+/* Prevent font scaling from applying to all elements inside panel */
+body.font-large .accessibility-panel,
+body.font-small .accessibility-panel,
+body.font-large .accessibility-panel *,
+body.font-small .accessibility-panel * {
+  font-size: inherit !important; /* Use base 1rem, don’t scale headings or labels */
+}
+
+/* Prevent contrast mode from changing colors in panel */
+body.contrast-mode .accessibility-panel,
+body.contrast-mode .accessibility-panel * {
+  background-color: white !important;
+  color: black !important;
+  border-color: #ccc !important;
+}
+
+.accessibility-panel h2 {
+  font-size: 1.125rem !important; /* Slightly bigger, still unaffected by global */
+  font-weight: bold;
+}

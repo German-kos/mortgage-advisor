@@ -1,0 +1,31 @@
+@import "tailwindcss/preflight";
+
+@tailwind components;
+@tailwind utilities;
+
+/* 🔥 Accessibility Global Classes */
+
+/* Contrast mode styles */
+body.contrast-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Font size adjustments */
+body.font-small {
+  font-size: 0.875rem; /* Tailwind text-sm */
+}
+
+body.font-normal {
+  font-size: 1rem; /* Tailwind text-base */
+}
+
+body.font-large {
+  font-size: 1.25rem; /* Tailwind text-lg */
+}
+
+/* Hide focus outlines if disabled */
+body.focus-hidden *:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
