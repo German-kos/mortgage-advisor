@@ -145,7 +145,7 @@ const Form = ({ showSubtext = true }: FormProps) => {
 
                 {/* Submit Button */}
                 <RadixForm.Submit asChild>
-                  <Button className="bg-[#F39C12] hover:bg-[#f36c12] mx-auto rounded-lg w-full h-[45px] font-semibold text-white text-base transition">
+                  <Button className="bg-[#F39C12] hover:bg-[#f36c12] mx-auto border-2 border-white rounded-lg w-full h-[45px] font-semibold text-white text-base transition hover:cursor-pointer">
                     בקשת שיחה חינם
                   </Button>
                 </RadixForm.Submit>

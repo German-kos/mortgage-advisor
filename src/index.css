@@ -191,7 +191,13 @@ body.contrast-mode * {
   color: white !important;
   border-color: white !important;
 }
+body.contrast-mode .bg-hero-pattern {
+  background-image: none !important;
+}
 
+body.contrast-mode .bg-hero-pattern::before {
+  display: none !important;
+}
 /* Font size adjustments */
 body.font-small {
   font-size: 0.875rem; /* Tailwind text-sm */

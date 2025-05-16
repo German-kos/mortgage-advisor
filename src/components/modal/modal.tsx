@@ -41,7 +41,7 @@ const Modal = ({ open, onClose }: CustomModalProps) => {
               className="top-4 right-4 absolute modal-close-btn"
               onClick={onClose}
             >
-              <X size={24} />
+              <X className="hover:cursor-pointer" size={24} />
             </button>
           </Dialog.Close>
 

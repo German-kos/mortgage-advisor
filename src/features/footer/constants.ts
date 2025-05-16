@@ -37,8 +37,4 @@ export const contact: ContactBlock[] = [
   },
 ];
 
-export const links: FooterLink[] = [
-  { name: "עוגיות", link: "#" },
-  { name: "פרטיות", link: "#" },
-  { name: "תנאים", link: "#" },
-];
+export const links: FooterLink[] = [{ name: "פרטיות ועוגיות", link: "#" }];
