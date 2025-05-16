@@ -30,6 +30,7 @@ const Footer = () => {
             <p className="font-normal text-[#D0D5DD] text-base">
               © 2025 משכנת'ס. כל הזכויות שמורות.
             </p>
+
             <FooterLegal />
           </div>
         </div>

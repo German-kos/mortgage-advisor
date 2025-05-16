@@ -16,12 +16,12 @@ export const AccessibilityControl = () => {
       {/* Floating Button */}
       <Dialog.Trigger asChild>
         <button
-          className="right-4 bottom-4 z-50 fixed flex justify-center items-center bg-blue-500 shadow-lg rounded-full w-18 h-18 hover:cursor-pointer"
+          className="right-4 bottom-4 z-50 fixed flex justify-center items-center bg-blue-600 shadow-lg rounded-full w-14 h-14 text-white accessibility-toggle-btn"
           aria-label="אפשרויות נגישות"
         >
           <img
             src="/images/icons/accessibility.svg"
-            className="w-10 h-10"
+            className="w-8 h-8"
             alt="כפתור נגישות"
           />
         </button>

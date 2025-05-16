@@ -31,9 +31,9 @@ const Modal = ({ open, onClose }: CustomModalProps) => {
         />
 
         <Dialog.Content
-          className={`min-h-[500px] justify-center items-center modal-content ${
-            open ? "slide-up" : "slide-down"
-          } flex flex-col items-center text-center`}
+          className={`min-h-[500px] justify-center items-center modal-content hero-modal 
+              ${open ? "slide-up" : "slide-down"} 
+              flex flex-col items-center text-center bg-white`}
           onPointerDown={(e) => e.stopPropagation()}
         >
           <Dialog.Close asChild>
