@@ -11,7 +11,11 @@ export const FooterSocials = () => {
           rel="noreferrer"
           className="text-[#EAECF0] text-base"
         >
-          <img src={`/images/icons/${social.name}.png`} alt="" />
+          <img
+            className="max-w-12 font-extrabold"
+            src={`/images/icons/${social.name}.svg`}
+            alt={social.name}
+          />
         </a>
       ))}
     </div>

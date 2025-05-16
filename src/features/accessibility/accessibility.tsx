@@ -19,7 +19,11 @@ export const AccessibilityControl = () => {
           className="right-4 bottom-4 z-50 fixed bg-yellow-400 shadow-lg px-4 py-2 rounded-full text-black"
           aria-label="אפשרויות נגישות"
         >
-          גישה
+          <img
+            src="/images/icons/accessibility.svg"
+            className="max-w-8 max-h-8"
+            alt="כפתור נגישות"
+          />
         </button>
       </Dialog.Trigger>
 
@@ -42,8 +46,11 @@ export const AccessibilityControl = () => {
 
           {/* Font Size Toggle */}
           <div className="mb-3">
-            <label className="block mb-1">גודל פונט</label>
+            <label htmlFor="font-size-select" className="block mb-1">
+              גודל פונט
+            </label>
             <select
+              id="font-size-select"
               value={fontSize}
               onChange={(e) =>
                 setFontSize(e.target.value as "normal" | "large" | "small")
